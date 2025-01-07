@@ -1,0 +1,291 @@
+{% extends "base.html" %}
+
+{% block title %}Reportes y Estadísticas{% endblock %}
+
+{% block content %}
+<div class="container-fluid mt-4">
+    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+        <h2 class="mb-3 mb-md-0">Reportes y Estadísticas</h2>
+        {% if current_user.rol == RoleEnum.ADMIN %}
+        <div class="dropdown">
+            <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                <i class="fas fa-file-export"></i> Exportar
+            </button>
+            <ul class="dropdown-menu">
+                {% for formato in ['csv', 'excel', 'json', 'pdf'] %}
+                <li><a class="dropdown-item" href="{{ url_for('exportar_reportes', formato=formato) }}">{{ formato|upper }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+
+    {% if current_user.rol in [RoleEnum.ADMIN, RoleEnum.PROFESOR] %}
+    <div class="row g-3 mb-4">
+        {% set cards = [
+            ('primary', 'Total Productos', stats.total_productos),
+            ('success', 'Productos Disponibles', productos_disponibles),
+            ('warning', 'Productos Prestados', productos_prestados)
+        ] %}
+        {% for color, title, value in cards %}
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card text-white bg-{{ color }} h-100">
+                <div class="card-body">
+                    <h5 class="card-title">{{ title }}</h5>
+                    <h2>{{ value }}</h2>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="alert alert-danger" role="alert">
+        No tienes permiso para ver esta sección.
+    </div>
+    {% endif %}
+    
+    <div class="row g-3 mb-4">
+        {% for chart_id, title in [
+            ('estadosChart', 'Distribución de Estados'),
+            ('movimientosChart', 'Movimientos por Día')
+        ] %}
+        <div class="col-12 col-lg-6">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">{{ title }}</h5>
+                    <canvas id="{{ chart_id }}"></canvas>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <form method="GET" class="row g-3">
+                {% for field in [
+                    ('fecha_inicio', 'Fecha Inicio', 'date'),
+                    ('fecha_fin', 'Fecha Fin', 'date')
+                ] %}
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <label class="form-label">{{ field[1] }}</label>
+                    <input type="{{ field[2] }}" name="{{ field[0] }}" class="form-control" value="{{ request.args.get(field[0], '') }}">
+                </div>
+                {% endfor %}
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <label class="form-label">Estado</label>
+                    <select name="estado" class="form-control">
+                        <option value="todos">Todos</option>
+                        {% for estado in estados %}
+                        <option value="{{ estado.nombre }}" {% if estado_filter == estado.nombre %}selected{% endif %}>
+                            {{ estado.nombre }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 d-flex align-items-end">
+                    <button type="submit" class="btn btn-primary w-100">Filtrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row g-3 mb-4">
+        <div class="col-12 col-lg-6">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Actividad por Usuario</h5>
+                    <canvas id="usuariosChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row g-3 mb-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Tendencias de Uso</h5>
+                    <canvas id="trendChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-3 mb-4">
+        {% for chart_id, title in [
+            ('tiempoPrestamoChart', 'Tiempo Promedio de Préstamo'),
+            ('productosPopularesChart', 'Productos más Solicitados')
+        ] %}
+        <div class="col-12 col-lg-6">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">{{ title }}</h5>
+                    <canvas id="{{ chart_id }}"></canvas>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="row g-3">
+        {% for title, headers, data in [
+            ('Productos Más Solicitados', ['Producto', 'Total Movimientos'], productos_frecuentes),
+            ('Últimos Movimientos', ['Fecha', 'Producto', 'Usuario', 'Estado'], ultimos_movimientos)
+        ] %}
+        <div class="col-12 col-lg-6">
+            <h3>{{ title }}</h3>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            {% for header in headers %}
+                            <th>{{ header }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% if title == 'Productos Más Solicitados' %}
+                            {% for producto, total in data %}
+                            <tr>
+                                <td>{{ producto.nombre }}</td>
+                                <td>{{ total }}</td>
+                            </tr>
+                            {% endfor %}
+                        {% else %}
+                            {% for movimiento in data %}
+                            <tr>
+                                <td>{{ movimiento.fecha_hora.strftime('%Y-%m-%d %H:%M') }}</td>
+                                <td>{{ movimiento.producto.nombre }}</td>
+                                <td>{{ movimiento.usuario.nombre_usuario }}</td>
+                                <td>{{ movimiento.estado_nuevo }}</td>
+                            </tr>
+                            {% endfor %}
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const chartConfigs = {
+    estados: {
+        type: 'pie',
+        data: {
+            labels: ['Disponibles', 'Prestados'],
+            datasets: [{
+                data: [{{ productos_disponibles }}, {{ productos_prestados }}],
+                backgroundColor: ['#28a745', '#ffc107']
+            }]
+        }
+    },
+    movimientos: {
+        type: 'bar',
+        data: {
+            labels: ['Lun', 'Mar', 'Mie', 'Jue', 'Vie'],
+            datasets: [{
+                label: 'Movimientos',
+                data: [12, 19, 3, 5, 2],
+                backgroundColor: '#007bff'
+            }]
+        },
+        options: {
+            scales: { y: { beginAtZero: true } }
+        }
+    },
+    usuarios: {
+        type: 'bar',
+        data: {
+            labels: {{ movimientos_por_usuario|map(attribute=0)|list|tojson|default('[0]', true) }},
+            datasets: [{
+                label: 'Movimientos',
+                data: {{ movimientos_por_usuario|map(attribute=1)|list|tojson|default('[0]', true) }},
+                backgroundColor: '#17a2b8'
+            }]
+        },
+        options: {
+            scales: { y: { beginAtZero: true } }
+        }
+    },
+    trend: {
+        type: 'line',
+        data: {
+            labels: {{ movimientos_por_dia|map(attribute=0)|list|tojson|default('[0]', true) }},
+            datasets: [{
+                label: 'Movimientos Diarios',
+                data: {{ movimientos_por_dia|map(attribute=1)|list|tojson|default('[0]', true) }},
+                borderColor: '#007bff',
+                tension: 0.1
+            }]
+        },
+        options: {
+            scales: { y: { beginAtZero: true } }
+        }
+    },
+    tiempoPrestamo: {
+        type: 'bar',
+        data: {
+            labels: {{ productos_frecuentes|map(attribute=0)|map(attribute='nombre')|list|tojson|default('[0]', true) }},
+            datasets: [{
+                label: 'Días promedio de préstamo',
+                data: {{ tiempo_prestamo_promedio|tojson|default([0], true) }},
+                backgroundColor: '#20c997',
+                borderColor: '#198754',
+                borderWidth: 1,
+                barThickness: 'flex',
+                maxBarThickness: 50
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { position: 'top' },
+                title: {
+                    display: true,
+                    text: 'Tiempo Promedio de Préstamo por Producto'
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Días'
+                    },
+                    ticks: { precision: 0 }
+                },
+                x: {
+                    ticks: {
+                        maxRotation: 45,
+                        minRotation: 45
+                    }
+                }
+            }
+        }
+    },    
+    productosPopulares: {
+        type: 'doughnut',
+        data: {
+            labels: {{ productos_populares|map(attribute='nombre')|list|tojson|default('[0]', true) }},
+            datasets: [{
+                data: {{ productos_populares|map(attribute='total')|list|tojson|default('[0]', true) }},
+                backgroundColor: ['#007bff', '#28a745', '#17a2b8', '#ffc107', '#dc3545']
+            }]
+        }
+    }
+};
+
+Object.entries(chartConfigs).forEach(([name, config]) => {
+    const ctx = document.getElementById(`${name}Chart`).getContext('2d');
+    new Chart(ctx, config);
+});
+</script>
+{% endblock %}

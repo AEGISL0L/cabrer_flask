@@ -1,0 +1,60 @@
+<!--
+The inicio.html template extends the base.html template and defines the content for the homepage of the RFID inventory management system.
+
+The template includes a jumbotron element with a welcome message and a brief description of the system.
+-->
+{% extends "base.html" %}
+
+{% block title %}Inici - farmacabrer v1{% endblock %}
+
+{% block content %}
+<div class="alert alert-warning text-center mb-4" role="alert">
+    <strong>AVÍS:</strong> Aquest sistema es troba actualment en fase de proves
+</div>
+<div class="jumbotron p-4 d-flex flex-column justify-content-center min-vh-61dot8">
+      <h1 class="text-primary display-4 responsive-text">Benvinguts al sistema de gestió de laboratori</h1>
+      <p class="lead fs-responsive">Sistema per a la gestió i sol·licitud de fórmules magistrals</p>
+      <div class="d-grid gap-2 col-12 col-md-8 col-lg-6 col-xl-5 mx-auto my-4">
+              <a href="{{ url_for('solicitar_formula') }}" class="btn btn-primary btn-lg rounded-3 shadow-sm py-3dot14 fs-1 golden-btn" style="background-color: #f59be9e7;">
+                  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="width: 38.2px; height: 38.2px; margin-right: 11.8px; fill: currentColor;">
+                      <title/><g data-name="Layer 13" id="Layer_13"><path d="M53,4H45.816a2.994,2.994,0,0,0-1.957-1.859A2.993,2.993,0,0,0,41,0H23a2.993,2.993,0,0,0-2.859,2.141A2.994,2.994,0,0,0,18.184,4H11A3,3,0,0,0,8,7V33a1,1,0,0,0,2,0V7a1,1,0,0,1,1-1h7V9a3,3,0,0,0,3,3H43a3,3,0,0,0,3-3V6h7a1,1,0,0,1,1,1v8a1,1,0,0,0,2,0V7A3,3,0,0,0,53,4ZM23,2H41a1,1,0,0,1,0,2H23a1,1,0,0,1,0-2ZM44,9a1,1,0,0,1-1,1H21a1,1,0,0,1-1-1V5a1,1,0,0,1,.3-.713A3,3,0,0,0,23,6H41a2.994,2.994,0,0,0,2.7-1.713A1,1,0,0,1,44,5Z"/><path d="M55,18H52V11a3,3,0,0,0-3-3,1,1,0,0,0,0,2,1,1,0,0,1,1,1v7H43a1,1,0,0,0-1,1v8a1,1,0,0,0,1,1h1V58H15a1,1,0,0,1-1-1V11a1,1,0,0,1,1-1,1,1,0,0,0,0-2,3,3,0,0,0-3,3V57a3,3,0,0,0,3,3H44.1a4.954,4.954,0,0,0,.925,2H11a1,1,0,0,1-1-1V37a1,1,0,0,0-2,0V61a3,3,0,0,0,3,3H49a5.006,5.006,0,0,0,5-5V28h1a1,1,0,0,0,1-1V19A1,1,0,0,0,55,18ZM52,56H46V55h4a1,1,0,0,0,1-1V49a1,1,0,0,0-1-1H46V47h4a1,1,0,0,0,0-2H46V44h2a1,1,0,0,0,0-2H46V41h2a1,1,0,0,0,0-2H46V38h2a1,1,0,0,0,0-2H46V35h4a1,1,0,0,0,0-2H46V32h6Zm-6-6h3v3H46Zm3,12a3,3,0,0,1-3-3V58h6v1A3,3,0,0,1,49,62Zm3-32H46V28h6Zm2-4H52V23a1,1,0,0,0-2,0v3H48V23a1,1,0,0,0-2,0v3H44V20H54Z"/><path d="M34,14H30a1,1,0,0,0-1,1v2H27a1,1,0,0,0-1,1v4a1,1,0,0,0,1,1h2v2a1,1,0,0,0,1,1h4a1,1,0,0,0,1-1V23h2a1,1,0,0,0,1-1V18a1,1,0,0,0-1-1H35V15A1,1,0,0,0,34,14Zm2,5v2H34a1,1,0,0,0-1,1v2H31V22a1,1,0,0,0-1-1H28V19h2a1,1,0,0,0,1-1V16h2v2a1,1,0,0,0,1,1Z"/><path d="M22,29a1,1,0,0,0,1,1H41a1,1,0,0,0,0-2H23A1,1,0,0,0,22,29Z"/><path d="M18,33a1,1,0,0,0,1,1H41a1,1,0,0,0,0-2H19A1,1,0,0,0,18,33Z"/><path d="M19,38H41a1,1,0,0,0,0-2H19a1,1,0,0,0,0,2Z"/><path d="M19,42H41a1,1,0,0,0,0-2H19a1,1,0,0,0,0,2Z"/><path d="M19,46H37a1,1,0,0,0,0-2H19a1,1,0,0,0,0,2Z"/><path d="M41,48H25a1,1,0,0,0-1,1v6a1,1,0,0,0,1,1H41a1,1,0,0,0,1-1V49A1,1,0,0,0,41,48Zm-1,6H26V50H40Z"/></g>
+                  </svg>
+                  <strong>Sol·licitud laboratori</strong>
+              </a>
+      </div>
+</div>
+
+
+	<!--
+<footer class="footer fixed-bottom py-3 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-lg-5 mb-3 mb-lg-0">
+                <h5 class="golden-ratio-text">Contacte</h5>
+                <p class="text-muted">Email: info@farmacabrer.com<br>Tel: +34 971 500 415</p>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3 mb-3 mb-lg-0">
+                <h5 class="golden-ratio-text">Enllaços</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-muted hover-golden">Política de privacitat</a></li>
+                    <li><a href="#" class="text-muted hover-golden">Termes i condicions</a></li>
+                </ul>
+            </div>
+            <div class="col-12 col-lg-4">
+                <h5 class="golden-ratio-text">Segueix-nos</h5>
+                <div class="social-links">
+                    <a href="#" class="text-muted me-3 hover-golden"><i class="bi bi-facebook fs-4"></i></a>
+                    <a href="#" class="text-muted me-3 hover-golden"><i class="bi bi-twitter fs-4"></i></a>
+                    <a href="#" class="text-muted hover-golden"><i class="bi bi-linkedin fs-4"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12 text-center">
+                <p class="text-muted mb-0 fs-6">© 2024 Sistema de gestió de laboratori ~ by juav dev. Tots els drets reservats.</p>
+            </div>
+        </div>
+    </div>
+</footer> -->
+
+{% endblock %}

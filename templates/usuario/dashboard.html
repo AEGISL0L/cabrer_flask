@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-fluid px-4 py-5">
+    <h2 class="display-4 mb-3 mb-sm-4 fs-2 fs-sm-1">Mis Fórmulas Magistrales</h2>
+    
+    <!-- Add Button -->
+    <div class="row g-4 mb-5">
+        <div class="col-12">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                <button type="button" class="btn btn-primary px-4 py-2 rounded-pill hover-shadow" data-bs-toggle="modal" data-bs-target="#nuevaFormulaModal">
+                    <i class="fas fa-plus-circle me-2"></i>Nueva Fórmula
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulas Table -->
+    <div class="bg-white p-4 rounded shadow-lg">
+        <div class="row">
+            <div class="col-12">
+                <div class="table-responsive rounded shadow-sm">
+                    <table class="table table-hover mb-0 border-light">
+                        <thead class="table-light">
+                            <tr>
+                                <th class="py-3 text-secondary">ID Petición</th>
+                                <th class="py-3 text-secondary">Nombre</th>
+                                <th class="py-3 text-secondary">Fecha</th>
+                                <th class="py-3 text-secondary">Estado</th>
+                                <th class="py-3 text-secondary">Teléfono</th>
+                                <th class="py-3 text-secondary">RELE</th>
+                                <th class="py-3 text-secondary">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for formula in formulas %}
+                            <tr class="align-middle">
+                                <td class="py-3 fw-medium">{{ formula.petition_id }}</td>
+                                <td class="py-3">{{ formula.nombre }}</td>
+                                <td class="py-3">{{ formula.fecha_solicitud.strftime('%d/%m/%Y %H:%M') }}</td>
+                                <td class="py-3">
+                                    <span class="badge bg-{{ 'success' if formula.estado == 'Completado' else 'warning' }} px-3 py-2 rounded-pill">
+                                        {{ formula.estado }}
+                                    </span>
+                                </td>
+                                <td class="py-3">{{ formula.telefono_contacto }}</td>
+                                <td class="py-3">{{ formula.requiere_rele }}</td>
+                                <td class="py-3">
+                                    <a href="{{ url_for('ver_formula', petition_id=formula.petition_id) }}" class="btn btn-sm btn-info px-3 rounded-pill text-white hover-shadow">
+                                        <i class="fas fa-eye me-1"></i>Ver Detalles
+                                    </a>
+                                </td>
+                            </tr>
+                            {% else %}
+                            <tr>
+                                <td colspan="7" class="text-center py-4 text-muted fst-italic">No hay fórmulas registradas</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Form -->
+    <div class="modal fade" id="nuevaFormulaModal" tabindex="-1" aria-labelledby="nuevaFormulaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="nuevaFormulaModalLabel">Sol·licita fórmula Magistral</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form method="POST" action="{{ url_for('usuario_solicitar_formula') }}" enctype="multipart/form-data">
+                        {{ form.csrf_token }}
+                        <div class="row mb-3 mb-sm-4">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    {{ form.nombre.label(class="form-label") }}
+                                    {{ form.nombre(class="form-control") }}
+                                    {% if form.nombre.errors %}
+                                        <div class="alert alert-danger">
+                                            {% for error in form.nombre.errors %}
+                                                {{ error }}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3 mb-sm-4">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    {{ form.descripcion.label(class="form-label") }}
+                                    {{ form.descripcion(class="form-control", rows=4) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3 mb-sm-4">
+                            <div class="col-12 col-md-6 mb-3 mb-md-0">
+                                <div class="form-group">
+                                    {{ form.requiere_rele.label(class="form-label") }}
+                                    {{ form.requiere_rele(class="form-control") }}
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="form-group">
+                                    {{ form.telefono_contacto.label(class="form-label") }}
+                                    {{ form.telefono_contacto(class="form-control") }}
+                                    {% if form.telefono_contacto.errors %}
+                                        <div class="alert alert-danger">
+                                            {% for error in form.telefono_contacto.errors %}
+                                                {{ error }}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3 mb-sm-4">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    {{ form.foto_receta.label(class="form-label") }}
+                                    {{ form.foto_receta(class="form-control") }}
+                                    {% if form.foto_receta.errors %}
+                                        <div class="alert alert-danger">
+                                            {% for error in form.foto_receta.errors %}
+                                                {{ error }}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-12 d-flex justify-content-end gap-2">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                {{ form.submit(class="btn btn-primary") }}
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

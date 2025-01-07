@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% block title %}Panell d'administració i control{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <h2 class="display-4 mb-3 mb-sm-4 fs-2 fs-sm-1">Panell d'administració</h2>
+    <div class="bg-white p-4 rounded shadow-lg">
+        <!-- Métricas de Rendimiento -->
+        <div class="row mt-4 mb-4">
+            <div class="col-12">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Métricas de Rendimiento</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row text-center">
+                            <div class="col-md-5">
+                                <h6 class="text-muted">Tiempo Promedio</h6>
+                                <h3 class="fw-bold">{{ stats.tiempo_promedio }}h</h3>
+                            </div>
+                            <div class="col-md-3">
+                                <h6 class="text-muted">Fórmulas/Día</h6>
+                                <h3 class="fw-bold">{{ stats.formulas_por_dia }}</h3>
+                            </div>
+                            <div class="col-md-4">
+                                <h6 class="text-muted">Tasa de Éxito</h6>
+                                <h3 class="fw-bold">{{ stats.tasa_exito }}%</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Row -->
+        <div class="row">
+            <!-- Acciones Rápidas Card -->
+            <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-bolt me-2"></i>Accions ràpides
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-grid gap-3">
+                            <a href="{{ url_for('solicitar_formula') }}" class="btn btn-info btn-lg">
+                                <i class="fas fa-plus me-2"></i>Nova fórmula
+                            </a>
+                            <a href="{{ url_for('lista_formulas') }}" class="btn btn-secondary btn-lg">
+                                <i class="fas fa-list me-2"></i>Gestionar fórmules
+                            </a>
+                                                    <a href="#" class="btn btn-secondary btn-lg" data-bs-toggle="modal" data-bs-target="#timelineModal">
+                                                        <i class="fas fa-clock me-2"></i>Veure timeline
+                                                    </a>
+                                                </div>
+
+                                                <!-- Modal for Timeline Selection -->
+                                                <div class="modal fade" id="timelineModal" tabindex="-1" aria-labelledby="timelineModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="timelineModalLabel">Selecciona una fórmula</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="list-group">
+                                                                    {% for formula in formulas_recientes %}
+                                                                    <a href="{{ url_for('ver_timeline_formula', petition_id=formula.petition_id) }}" class="list-group-item list-group-item-action">
+                                                                        #{{ formula.petition_id }} - {{ formula.nombre }}
+                                                                    </a>
+                                                                    {% endfor %}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>                    </div>
+                </div>
+            </div>
+
+            <!-- Distribución de Estados Card -->
+            <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-header bg-secondary text-white">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-chart-pie me-2"></i>Estat de fórmules
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-3 p-2">
+                            <span class="fw-bold text-warning"><i class="fas fa-clock me-2"></i>Pendents</span>
+                            <span class="badge bg-warning text-dark rounded-pill">{{ stats.formulas_pendientes }}</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3 p-2">
+                            <span class="fw-bold text-info"><i class="fas fa-cog me-2"></i>En preparació</span>
+                            <span class="badge bg-info text-white rounded-pill">{{ stats.formulas_preparacion }}</span>
+                        </div>
+                        <div class="d-flex justify-content-between p-2">
+                            <span class="fw-bold text-success"><i class="fas fa-check-circle me-2"></i>Completades</span>
+                            <span class="badge bg-success text-white rounded-pill">{{ stats.formulas_completadas }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fórmules magistrals Card -->
+            <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-header bg-secondary text-white">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-flask me-2"></i>Fórmules magistrals
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="display-4 text-center fw-bold text-primary">{{ stats.total_formulas }}</h3>
+                        <p class="card-text text-muted">Total fórmules</p>
+                        <div class="d-grid">
+                            <a href="{{ url_for('lista_formulas') }}" class="btn btn-primary btn-lg">
+                                <i class="fas fa-list me-2"></i>Veure fórmules
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fórmulas Recientes Card -->
+            <div class="col-12 mb-4">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-header bg-secondary text-white">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-flask me-2"></i>Fórmules recents
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            {% for formula in formulas_recientes %}
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-secondary"><i class="fas fa-vial me-2"></i>#{{ formula.petition_id }} - {{ formula.nombre }}</span>
+                                <span class="badge bg-{{ 'success' if formula.estado == 'Completado' else 'warning' if formula.estado == 'En preparación' else 'secondary' }} rounded-pill">
+                                    {{ formula.estado }}
+                                </span>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>        
+        </div>
+    </div>
+</div>
+{% endblock %}

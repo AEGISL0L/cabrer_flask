@@ -1,0 +1,42 @@
+<!-- This template extends the base.html template and provides a login form 
+ for users to authenticate. The form includes fields for the user's username 
+ and password, and a submit button to initiate the login process. 
+ The template uses Flask-WTF forms to handle the form data and validation. -->
+ 
+{% extends "base.html" %}
+
+{% block title %}Inicia sessió{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center align-items-center min-vh-75">
+        <div class="col-lg-5 col-md-8 col-sm-10">
+            <div class="card shadow-lg" style="border-radius: 1.618rem;">
+                <div class="card-header bg-primary text-white" style="border-top-left-radius: 1.618rem; border-top-right-radius: 1.618rem;">
+                    <h4 class="card-title mb-0 py-2">
+                        <i class="fas fa-sign-in-alt me-2"></i>Inicia sessió
+                    </h4>
+                </div>
+                <div class="card-body px-4 py-4">
+                    <!-- login.html -->
+                    <form method="POST">
+                        {{ form.hidden_tag() }}
+                        <div class="form-group mb-3">
+                            {{ form.nombre_usuario.label(class="form-label") }}
+                            {{ form.nombre_usuario(class="form-control form-control-lg", style="border-radius: 0.618rem;") }}
+                        </div>
+                        <div class="form-group mb-4">
+                            {{ form.contrasena.label(class="form-label") }}
+                            {{ form.contrasena(class="form-control form-control-lg", style="border-radius: 0.618rem;") }}
+                        </div>
+                        {{ form.submit(class="btn btn-primary btn-lg w-100", style="border-radius: 0.618rem;") }}
+                    </form>
+                </div>
+                <div class="card-footer text-center py-3" style="border-bottom-left-radius: 1.618rem; border-bottom-right-radius: 1.618rem;">
+                    <small class="text-muted">¿No tienes una cuenta? <a href="{{ url_for('registro') }}" class="text-primary text-decoration-none">Regístrate aquí</a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>                        
+{% endblock %}

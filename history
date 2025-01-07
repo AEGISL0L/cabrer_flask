@@ -1,0 +1,1002 @@
+(venv) mail:/srv/www/farmacabrer.com/public_html # history
+  333  2024-08-14 19:28:24 cd apache2
+  334  2024-08-14 19:28:25 ls
+  335  2024-08-14 19:28:40 cd sysconfig.d
+  336  2024-08-14 19:28:41 ls
+  337  2024-08-14 19:28:51 vim global.conf
+  338  2024-08-14 19:29:01 vim include.conf
+  339  2024-08-14 19:29:19 vim httpd.conf
+  340  2024-08-14 19:29:30 cd ..
+  341  2024-08-14 19:29:35 vim httpd.conf
+  342  2024-08-14 19:30:09 cd vhosts.d
+  343  2024-08-14 19:30:09 ls
+  344  2024-08-14 19:30:24 vim farmacabrer.com.conf
+  345  2024-08-14 19:32:56 sudo systemctl restart apache2
+  346  2024-08-14 19:33:12 sudo systemctl status apache2
+  347  2024-08-14 19:34:29 vim /etc/apache2/httpd.conf
+  348  2024-08-14 19:37:00 ls
+  349  2024-08-14 19:37:07 vim farmacabrer.com.conf
+  350  2024-08-14 19:38:19 sudo systemctl restart apache2
+  351  2024-08-14 19:38:20 sudo systemctl restart nginx
+  352  2024-08-14 19:38:31 sudo certbot --nginx -d www.farmacabrer.com
+  353  2024-08-14 19:40:13 ls
+  354  2024-08-14 19:40:21 vim farmacabrer.com.conf
+  355  2024-08-14 19:41:00 vim /etc/nginx/vhosts.d/farmacabrer.com.conf
+  356  2024-08-14 19:43:34 sudo journalctl -xe | grep apache
+  357  2024-08-14 19:44:16 sudo vim /etc/httpd/conf/httpd.conf
+  358  2024-08-14 19:45:29 sudo systemctl restar apache2
+  359  2024-08-14 19:45:34 sudo systemctl restart apache2
+  360  2024-08-14 19:45:40 sudo systemctl restart nginx
+  361  2024-08-14 19:46:19 sudo tail -f /var/log/nginx/error.log
+  362  2024-08-14 19:46:55 sudo systemctl status apache2
+  363  2024-08-14 19:47:01 sudo netstat -tuln | grep 8083
+  364  2024-08-14 19:47:39 sudo ss -tuln | grep 8083
+  365  2024-08-14 19:47:44 sudo zypper install net-tools
+  366  2024-08-14 19:48:22 sudo ss -tuln | grep 8083
+  367  2024-08-14 19:48:50 cd /etc/apache2/vhosts.d
+  368  2024-08-14 19:48:51 ls
+  369  2024-08-14 19:49:00 vim marketpleb.com.conf
+  370  2024-08-14 19:49:28 /var/log/apache2
+  371  2024-08-14 19:49:33 cd /var/log/apache2
+  372  2024-08-14 19:49:34 ls
+  373  2024-08-14 19:49:47 vim farmacabrer.com-error.log
+  374  2024-08-14 19:50:01 vim error_log
+  375  2024-08-14 19:50:42 ls
+  376  2024-08-14 19:50:44 cd ..
+  377  2024-08-14 19:51:05 cd /etc/nginx/vhosts.d/
+  378  2024-08-14 19:51:05 ls
+  379  2024-08-14 19:51:10 cd ..
+  380  2024-08-14 19:51:11 ls
+  381  2024-08-14 19:51:38 nginx.conf
+  382  2024-08-14 19:51:44 vim nginx.conf
+  383  2024-08-14 19:52:04 cd conf.d
+  384  2024-08-14 19:52:06 ls
+  385  2024-08-14 19:52:10 cd ..
+  386  2024-08-14 19:52:31 ls
+  387  2024-08-14 19:52:37 cd vhosts.d
+  388  2024-08-14 19:52:39 ls
+  389  2024-08-14 19:53:00 vim btcpaysex.com.conf
+  390  2024-08-14 19:53:15 vim farmacabrer.com.conf
+  391  2024-08-14 19:53:50 sudo systemctl restart apache2
+  392  2024-08-14 19:53:56 sudo systemctl restart nginx
+  393  2024-08-14 19:54:55 vim /etc/apache2/httpd.conf
+  394  2024-08-14 19:56:01 vim /etc/apache2/listen.conf
+  395  2024-08-14 19:56:26 systemctl restart apache2
+  396  2024-08-14 19:56:57 vim farmacabrer.com.conf
+  397  2024-08-14 20:02:30 cd /etc/letsencrypt/live/
+  398  2024-08-14 20:02:32 ls
+  399  2024-08-14 20:02:44 cd farmacabrer.com
+  400  2024-08-14 20:02:45 ls
+  401  2024-08-14 20:02:50 cd ..
+  402  2024-08-14 20:03:13 cd /etc/apache2
+  403  2024-08-14 20:03:17 ls
+  404  2024-08-14 20:03:25 cd vhosts.d
+  405  2024-08-14 20:03:26 ls
+  406  2024-08-14 20:04:25 tree
+  407  2024-08-14 20:05:12 vim farmacabrer.com.conf
+  408  2024-08-14 20:06:39 sudo systemctl restart apache2
+  409  2024-08-14 20:06:47 sudo systemctl status apache2
+  410  2024-08-14 20:09:35 vim farmacabrer.com.conf
+  411  2024-08-14 20:09:50 sudo systemctl restart apache2
+  412  2024-08-14 20:09:53 sudo systemctl status apache2
+  413  2024-08-14 20:15:27 ls
+  414  2024-08-14 20:15:35 cd /srv
+  415  2024-08-14 20:15:37 ls
+  416  2024-08-14 20:15:38 cd www
+  417  2024-08-14 20:15:40 ls
+  418  2024-08-14 20:15:46 cd farmacabrer.com
+  419  2024-08-14 20:15:47 ls
+  420  2024-08-14 20:15:54 cd public_html
+  421  2024-08-14 20:15:56 ls
+  422  2024-08-14 20:16:01 vim index.html
+  423  2024-08-14 20:17:09 vim script.js
+  424  2024-08-14 20:17:33 vim styles.css
+  425  2024-08-14 20:23:06 vim index.html
+  426  2024-08-14 18:02:32 cd etc
+  427  2024-08-14 18:02:36 cd /etc
+  428  2024-08-14 18:02:41 ls
+  429  2024-08-14 18:02:52 cd apache2
+  430  2024-08-14 18:02:54 ls
+  431  2024-08-14 18:03:08 vhosts.d
+  432  2024-08-14 18:03:15 cd vhosts.d
+  433  2024-08-14 18:03:20 ls
+  434  2024-08-14 18:03:53 vim btcpaysex.com.conf
+  435  2024-08-14 18:06:06 vim localplebs.com.conf
+  436  2024-08-14 18:06:33 vim markepleb.com.conf
+  437  2024-08-14 18:07:36 vim marketpleb.com.conf
+  438  2024-08-14 18:08:27 rm markepleb.com.conf
+  439  2024-08-14 18:08:33 vim farmacabrer.com.conf
+  440  2024-08-14 18:10:20 sudo systemctl restart apache2
+  441  2024-08-14 18:10:36 cd ..
+  442  2024-08-14 18:10:44 cd nginx
+  443  2024-08-14 18:10:49 ls
+  444  2024-08-14 18:10:53 cd conf.d
+  445  2024-08-14 18:10:54 ls
+  446  2024-08-14 18:11:02 cd ..
+  447  2024-08-14 18:11:09 cd vhosts.d
+  448  2024-08-14 18:11:11 ls
+  449  2024-08-14 18:11:21 vim marketpleb.com.conf
+  450  2024-08-14 18:12:31 vim farmacabrer.com.conf
+  451  2024-08-14 18:17:13 sudo chmod 600 /etc/letsencrypt/cloudflare.ini
+  452  2024-08-14 18:18:03 cd /etc/letsencrypt
+  453  2024-08-14 18:18:05 ls
+  454  2024-08-14 18:27:52 tree
+  455  2024-08-14 18:28:55 sudo certbot renew --dry-run
+  456  2024-08-14 18:37:53 sudo certbot --nginx -d farmacabrer.com -d www.farmacabrer.com
+  457  2024-08-14 18:38:48 cd /etc/letsencrypt/live/
+  458  2024-08-14 18:38:59 mkdir farmacabrer.com
+  459  2024-08-14 18:39:12 cd farmacabrer.com
+  460  2024-08-14 18:39:29 sudo certbot certonly --dns-cloudflare --dns-cloudflare-credentials /etc/letsencrypt/cloudflare.ini -d farmacabrer.com -d www.farmacabrer.com
+  461  2024-08-14 18:40:07 sudo certbot certonly --dns-cloudflare -d farmacabrer.com -d www.farmacabrer.com
+  462  2024-08-14 18:40:37 cd ..
+  463  2024-08-14 18:40:41 ls
+  464  2024-08-14 18:40:48 cd keys
+  465  2024-08-14 18:40:48 ls
+  466  2024-08-14 18:40:51 cd ..
+  467  2024-08-14 18:40:52 ls
+  468  2024-08-14 18:41:42 cd ..
+  469  2024-08-14 18:42:09 cd nginx
+  470  2024-08-14 18:42:10 ls
+  471  2024-08-14 18:42:15 cd vhosts.d
+  472  2024-08-14 18:42:17 ls
+  473  2024-08-14 18:42:27 vim farmacabrer.com.conf
+  474  2024-08-14 18:43:14 sudo certbot --nginx -d farmacabrer.com -d www.farmacabrer.com
+  475  2024-08-14 18:43:49 sudo nginx -t
+  476  2024-08-14 18:44:40 sudo su
+  477  2024-08-14 18:49:52 sudo ss -tuln | grep ':80'
+  478  2024-08-14 18:51:34 ps -p 4096 -o comm=
+  479  2024-08-14 18:51:46 systemctl status apache2
+  480  2024-08-14 18:52:04 systemctl status nginx
+  481  2024-08-14 18:52:24 htop
+  482  2024-08-14 18:53:46 sudo lsof -i :80
+  483  2024-08-14 18:54:39 sudo systemctl stop apache2
+  484  2024-08-25 19:56:40 htop
+  485  2024-08-25 20:51:52 sudo zypper update
+  486  2024-08-25 20:54:08 htop
+  487  2024-08-25 22:23:35 status
+  488  2024-08-25 22:23:47 help
+  489  2024-08-26 08:12:57 htop
+  490  2024-08-26 08:15:25 ls
+  491  2024-08-26 08:15:39 systemctl
+  492  2024-08-26 08:16:47 systemctl stop dovecot
+  493  2024-08-26 08:17:03 systemctl stop postman
+  494  2024-08-26 08:17:12 systemctl stop postfix
+  495  2024-08-26 08:17:21 ls
+  496  2024-08-26 08:17:39 cd .secrets
+  497  2024-08-26 08:17:41 lsz
+  498  2024-08-26 08:17:42 ls
+  499  2024-08-26 08:17:50 cd certbot
+  500  2024-08-26 08:17:51 ls
+  501  2024-08-26 08:17:59 vim cloudflare.ini
+  502  2024-08-26 08:18:20 cd
+  503  2024-08-26 08:18:21 ls
+  504  2024-08-26 08:18:28 cd /etc
+  505  2024-08-26 08:18:30 ls
+  506  2024-09-01 16:10:27 sudo zypper update
+  507  2024-09-01 16:11:26 reboot
+  508  2024-09-01 16:38:27 sudo systemctl start apache
+  509  2024-09-01 16:38:34 sudo systemctl start nginx
+  510  2024-09-01 16:38:49 sudo systemctl status apache
+  511  2024-09-01 16:39:11 sudo systemctl status nginx
+  512  2024-09-01 16:42:53 sudo systemctl restart nginx
+  513  2024-09-01 16:43:16 sudo systemctl restart apache
+  514  2024-09-01 16:43:25 sudo systemctl restart apache2
+  515  2024-09-01 16:44:13 journalctl
+  516  2024-09-01 16:46:28 reboot
+  517  2024-09-01 16:47:11 htop
+  518  2024-09-01 16:48:20 systemctl status apache2
+  519  2024-09-01 16:48:38 systemctl status nginx
+  520  2024-09-01 16:49:41 cd /etc
+  521  2024-09-01 16:49:43 ls
+  522  2024-09-01 16:49:51 cd 
+  523  2024-09-01 16:49:56 cd /srv
+  524  2024-09-01 16:49:57 ls
+  525  2024-09-01 16:50:01 cd www
+  526  2024-09-01 16:50:03 ls
+  527  2024-09-01 16:50:12 cd farmacabrer.com
+  528  2024-09-01 16:50:14 ls
+  529  2024-09-01 16:50:30 cd public_html
+  530  2024-09-01 16:50:31 ls
+  531  2024-09-01 16:50:35 cd 
+  532  2024-09-01 16:50:38 ls
+  533  2024-09-01 16:50:50 cd etc
+  534  2024-09-01 16:50:55 cd /etc
+  535  2024-09-01 16:50:56 ls
+  536  2024-09-01 16:51:34 cd apache2
+  537  2024-09-01 16:51:36 ls
+  538  2024-09-01 16:51:44 cd vhosts.d
+  539  2024-09-01 16:51:45 ls
+  540  2024-09-01 16:51:53 vim farmacabrer.com
+  541  2024-09-01 16:52:26 ls
+  542  2024-09-01 16:52:38 vim farmacabrer.com.conf
+  543  2024-09-01 16:53:21 cd /var/log/apache2
+  544  2024-09-01 16:53:23 ls
+  545  2024-09-01 16:53:41 vim farmacabrer.com-access.log
+  546  2024-09-01 17:06:40 ls
+  547  2024-09-01 17:06:54 systemctl restart apache2
+  548  2024-09-01 17:07:04 systemctl restart nginx
+  549  2024-09-01 17:16:17 sudo certbot renew
+  550  2024-09-01 17:17:25 sudo certbot renew --force-renewal
+  551  2024-09-01 17:26:45 shutdown
+  552  2024-09-01 18:21:12 sudo certbot certificates
+  553  2024-09-01 18:21:40 sudo a2enmod ssl
+  554  2024-09-01 18:21:46 sudo a2enmod rewrite
+  555  2024-09-01 18:21:51 sudo systemctl restart apache2
+  556  2024-09-01 18:21:58 sudo nginx -t
+  557  2024-09-01 18:22:08 sudo systemctl restart nginx
+  558  2024-09-01 18:22:22 sudo ufw status
+  559  2024-09-01 18:23:28 sudo apachectl configtest
+  560  2024-09-01 18:24:14 sudo /etc/apache2
+  561  2024-09-01 18:24:21 cd /etc/apache2
+  562  2024-09-01 18:24:21 ls
+  563  2024-09-01 18:24:29 cd vhosts.d
+  564  2024-09-01 18:24:30 ls
+  565  2024-09-01 18:24:38 vim farmacabrer.com.conf
+  566  2024-09-01 18:25:19 vim /var/log/apache2/farmacabrer.com-error.log
+  567  2024-09-01 18:25:49 cd ..
+  568  2024-09-01 18:25:50 ls
+  569  2024-09-01 18:26:09 vim listen.conf
+  570  2024-09-01 18:27:04 ls
+  571  2024-09-01 18:27:06 cd ..
+  572  2024-09-01 18:27:09 cd nginx
+  573  2024-09-01 18:27:10 ls
+  574  2024-09-01 18:27:17 cd vhosts.d
+  575  2024-09-01 18:27:18 ls
+  576  2024-09-01 18:27:25 vim farmacabrer.com.conf
+  577  2024-09-01 18:29:31 sudo systemctl restart nginx
+  578  2024-09-01 18:29:31 sudo systemctl restart apache2
+  579  2024-09-01 18:29:36 curl -IL http://www.farmacabrer.com
+  580  2024-09-01 18:29:36 curl -IL https://www.farmacabrer.com
+  581  2024-09-02 18:26:28 ls
+  582  2024-09-02 18:26:31 htop
+  583  2024-09-02 18:27:01 sudo systemctl disable dovecot
+  584  2024-09-02 18:27:13 sudo systemctl stop dovecot
+  585  2024-09-02 18:27:17 sudo systemctl status dovecot
+  586  2024-09-02 18:27:22 htop
+  587  2024-09-02 18:28:49 sudo systemctl disable postfix
+  588  2024-09-02 18:28:56 sudo systemctl stop postfix
+  589  2024-09-02 18:28:58 htop
+  590  2024-09-02 20:01:25 ls
+  591  2024-09-02 20:01:41 cd /etc
+  592  2024-09-02 20:01:42 ls
+  593  2024-09-02 20:02:14 cd apache2
+  594  2024-09-02 20:02:15 ls
+  595  2024-09-02 20:02:26 vim listen.conf
+  596  2024-09-02 20:02:59 cd vhosts.d
+  597  2024-09-02 20:03:02 cd ..
+  598  2024-09-02 20:03:06 vim listen.conf
+  599  2024-09-02 20:03:16 cd vhosts.d
+  600  2024-09-02 20:03:17 ls
+  601  2024-09-02 20:03:28 cd farmacabrer.com.conf
+  602  2024-09-02 20:03:36 vim farmacabrer.com.conf
+  603  2024-09-02 20:04:11 vim 2140mallorca.com.conf
+  604  2024-09-02 20:06:32 cd /srv/
+  605  2024-09-02 20:06:32 ls
+  606  2024-09-02 20:06:34 cd www
+  607  2024-09-02 20:06:35 ls
+  608  2024-09-02 20:06:45 mkdir 2140mallorca.com
+  609  2024-09-02 20:06:55 cd farmacabrer.com
+  610  2024-09-02 20:06:56 ls
+  611  2024-09-02 20:07:00 cd ..
+  612  2024-09-02 20:07:06 cd /etc/nginx
+  613  2024-09-02 20:07:07 ls
+  614  2024-09-02 20:07:12 cd vhosts.d
+  615  2024-09-02 20:07:14 ls
+  616  2024-09-02 20:07:27 vim farmacabrer.com.conf
+  617  2024-09-02 20:07:48 vim 2140mallorca.com.conf
+  618  2024-09-02 20:17:31 cd ..
+  619  2024-09-02 20:17:35 cd 
+  620  2024-09-02 20:17:39 tree
+  621  2024-09-02 20:18:16 cd /etc
+  622  2024-09-02 20:18:18 ls
+  623  2024-09-02 20:18:40 cd ssl
+  624  2024-09-02 20:18:41 ls
+  625  2024-09-02 20:18:46 cd ..
+  626  2024-09-02 20:18:47 ls
+  627  2024-09-02 20:18:58 tree
+  628  2024-09-02 20:20:30 tree -l
+  629  2024-09-02 20:20:39 tree -a
+  630  2024-09-02 20:20:43 ls
+  631  2024-09-02 20:20:51 cd letsencrypt
+  632  2024-09-02 20:20:52 ls
+  633  2024-09-02 20:20:57 cd keys
+  634  2024-09-02 20:21:01 ls
+  635  2024-09-02 20:21:13 cd acconts
+  636  2024-09-02 20:22:25 cd ..
+  637  2024-09-02 20:22:28 cd keys
+  638  2024-09-02 20:22:29 ls
+  639  2024-09-02 20:22:32 cd ..
+  640  2024-09-02 20:23:17 certbot 
+  641  2024-09-02 20:25:12 cd letsencrypt
+  642  2024-09-02 20:25:13 ls
+  643  2024-09-02 20:25:25 ls -a
+  644  2024-09-02 20:25:36 cd keys
+  645  2024-09-02 20:25:37 ls
+  646  2024-09-02 20:25:40 cd ..
+  647  2024-09-02 20:25:41 ls
+  648  2024-09-02 20:25:46 cd renewal
+  649  2024-09-02 20:25:47 ls
+  650  2024-09-02 20:25:51 cd ..
+  651  2024-09-02 20:25:57 cd renewal
+  652  2024-09-02 20:26:09 vim www.btcpaysex.com.conf
+  653  2024-09-02 20:27:04 sudo chmod 600 /root/.secrets/certbot/cloudflare.ini
+  654  2024-09-02 20:27:09 ls -l /root/.secrets/certbot/cloudflare.ini
+  655  2024-09-02 20:27:48 sudo certbot certonly --dns-cloudflare --dns-cloudflare-credentials /root/.secrets/certbot/cloudflare.ini -d 2140mallorca.com -d www.2140mallorca.com
+  656  2024-09-02 20:28:59 sudo certbot certonly --dns-cloudflare --dns-cloudflare-credentials /root/.secrets/certbot/cloudflare.ini -d 2140mallorca.com -d www.2140mallorca.com --dns-cloudflare-propagation-seconds 60
+  657  2024-09-02 20:30:54 cd ..
+  658  2024-09-02 20:31:14 vim dardealtassl
+  659  2024-09-02 20:31:49 sudo systemctl restart apache2
+  660  2024-09-02 20:31:55 sudo systemctl restart nginx
+  661  2024-09-02 20:32:11 systemctl status nginx.service
+  662  2024-09-02 20:32:37 certbot renew
+  663  2024-09-02 20:33:17 sudo certbot certonly --dns-cloudflare --dns-cloudflare-credentials /root/.secrets/certbot/cloudflare.ini -d www.2140mallorca.com --dns-cloudflare-propagation-seconds 60
+  664  2024-09-02 20:33:35 cd ..
+  665  2024-09-02 20:33:37 ls
+  666  2024-09-02 20:33:40 cd nginx
+  667  2024-09-02 20:33:41 ls
+  668  2024-09-02 20:33:48 cd vhosts.d
+  669  2024-09-02 20:33:49 ls
+  670  2024-09-02 20:34:00 vim 2140mallorca.com.conf
+  671  2024-09-02 20:34:40 sudo systemctl restart apache2
+  672  2024-09-02 20:34:46 sudo systemctl restart nginx
+  673  2024-09-02 20:35:06 cd /srv
+  674  2024-09-02 20:35:08 ls
+  675  2024-09-02 20:35:10 cd www
+  676  2024-09-02 20:35:12 ls
+  677  2024-09-02 20:35:19 cd 2140mallorca.com
+  678  2024-09-02 20:35:20 ls
+  679  2024-09-02 20:35:30 mkdir public_html
+  680  2024-09-02 20:35:38 cd public_html
+  681  2024-09-02 20:35:39 ls
+  682  2024-09-02 20:35:43 vim index.html
+  683  2024-09-10 10:13:42 cd /srv
+  684  2024-09-10 10:13:43 ls
+  685  2024-09-10 10:13:47 cd www
+  686  2024-09-10 10:13:48 ls
+  687  2024-09-10 10:13:54 cd farmacabrer.com
+  688  2024-09-10 10:13:55 ls
+  689  2024-09-10 10:13:59 cd public_html
+  690  2024-09-10 10:14:00 ls
+  691  2024-09-10 10:14:36 mkdir 0a93249edbdb758a92b7be60fc0a6f262150fac468ba861fecc365c1a550f9cbb00dc12ba8496821fa453729191914073c289e8e03d2fd947c13f8344c9dcddb
+  692  2024-09-10 10:14:48 cd 0a93249edbdb758a92b7be60fc0a6f262150fac468ba861fecc365c1a550f9cbb00dc12ba8496821fa453729191914073c289e8e03d2fd947c13f8344c9dcddb
+  693  2024-09-10 10:15:01 <html lang="en">
+  694  2024-09-10 10:15:01 <head>
+  695  2024-09-10 10:15:01 </head>
+  696  2024-09-10 10:15:01 <body>
+  697  2024-09-10 10:15:01 </body>
+  698  2024-09-10 10:15:01 </html>
+  699  2024-09-10 10:15:05 ls
+  700  2024-09-10 10:15:12 vim index.html
+  701  2024-09-21 00:47:58 ls
+  702  2024-09-21 00:48:05 cd /etc
+  703  2024-09-21 00:48:07 ls
+  704  2024-09-21 00:48:11 cd apacheç
+  705  2024-09-21 00:48:14 cd apache2
+  706  2024-09-21 00:48:16 ls
+  707  2024-09-21 00:48:28 cd vhosts.d
+  708  2024-09-21 00:48:29 ls
+  709  2024-09-21 00:48:52 vim farmacabrer.com.conf
+  710  2024-09-21 00:50:30 vim paperillapis.com.conf
+  711  2024-09-21 00:51:23 vim marketpleb.com.conf
+  712  2024-09-21 00:51:48 vim 2140mallorca.com.conf
+  713  2024-09-21 00:52:09 vim btcpaysex.com.conf
+  714  2024-09-21 00:52:17 vim 2140mallorca.com.conf
+  715  2024-09-21 00:52:30 vim farmacabrer.com.conf
+  716  2024-09-21 00:52:38 vim paperillapis.com.conf
+  717  2024-09-21 00:57:44 vim listen.conf
+  718  2024-09-21 00:57:56 ls
+  719  2024-09-21 00:58:02 cd ..
+  720  2024-09-21 00:58:04 lsd
+  721  2024-09-21 00:58:05 ls
+  722  2024-09-21 00:58:10 httpd.conf
+  723  2024-09-21 00:58:17 vim httpd.conf
+  724  2024-09-21 01:06:10 ls
+  725  2024-09-21 01:07:54 cd conf.d
+  726  2024-09-21 01:07:56 ls
+  727  2024-09-21 01:07:59 cd ..
+  728  2024-09-21 01:08:04 cd nginx
+  729  2024-09-21 01:08:05 ls
+  730  2024-09-21 01:08:13 cd vhosts.d
+  731  2024-09-21 01:08:15 ls
+  732  2024-09-21 01:08:48 vim paperillapis.org
+  733  2024-09-21 01:09:15 rm paperillapis.org
+  734  2024-09-21 01:09:24 rm -rf paperillapis.org
+  735  2024-09-21 01:09:39 vim paperillapìs.com.conf
+  736  2024-09-21 01:10:07 vim 2140mallorca.com.conf
+  737  2024-09-21 01:10:33 ls
+  738  2024-09-21 01:10:45 vim paperillapis.com.conf
+  739  2024-09-21 01:13:00 cd ..
+  740  2024-09-21 01:13:01 ls
+  741  2024-09-21 01:13:07 cd ..
+  742  2024-09-21 01:13:08 ls
+  743  2024-09-21 01:13:15 cd ssl
+  744  2024-09-21 01:13:17 ls
+  745  2024-09-21 01:13:27 cd certs
+  746  2024-09-21 01:13:28 ls
+  747  2024-09-21 01:13:31 cd ..
+  748  2024-09-21 01:13:33 ls
+  749  2024-09-21 01:13:36 cd ..
+  750  2024-09-21 01:13:37 ls
+  751  2024-09-21 01:13:58 cd letsencrypt
+  752  2024-09-21 01:13:59 ls
+  753  2024-09-21 01:14:28 cd keys
+  754  2024-09-21 01:14:30 ls
+  755  2024-09-21 01:14:35 cd ..
+  756  2024-09-21 01:14:38 ls
+  757  2024-09-21 01:15:55 cd ..
+  758  2024-09-21 01:15:57 ls
+  759  2024-09-21 01:16:04 cd srv
+  760  2024-09-21 01:16:06 ls
+  761  2024-09-21 01:16:10 cd www
+  762  2024-09-21 01:16:11 ls
+  763  2024-09-21 01:16:27 vim paperillapis.org
+  764  2024-09-21 01:17:36 ls
+  765  2024-09-21 04:04:20 cd
+  766  2024-09-21 04:04:22 ls
+  767  2024-09-21 04:04:34 cd /et
+  768  2024-09-21 04:04:47 cd /etc
+  769  2024-09-21 04:04:50 ls
+  770  2024-09-21 04:05:08 wge https://cdn.zabbix.com/zabbix/sources/stable/7.0/zabbix-7.0.3.tar.gz 
+  771  2024-09-21 04:05:12 cng wge
+  772  2024-09-21 04:05:15 cnf cng
+  773  2024-09-23 19:22:23 cd srv
+  774  2024-09-23 19:22:24 ls
+  775  2024-09-23 19:22:33 cd /srv/
+  776  2024-09-23 19:22:34 ls
+  777  2024-09-23 19:22:36 cd www
+  778  2024-09-23 19:22:37 ls
+  779  2024-09-23 19:23:06 mkdir paperillapis.org
+  780  2024-09-23 19:23:15 cd paperillapis.org
+  781  2024-09-23 19:23:16 ls
+  782  2024-09-23 19:23:35 mkdir SWDIW2425
+  783  2024-09-23 19:23:36 ls
+  784  2024-09-23 19:23:42 cd SWDIW2425
+  785  2024-09-23 19:23:43 ls
+  786  2024-09-23 19:23:54 vim diari.txt
+  787  2024-09-23 19:25:03 ls
+  788  2024-09-23 19:25:23 cd ..
+  789  2024-09-23 19:25:24 ls
+  790  2024-09-23 19:25:29 cd ..
+  791  2024-09-23 19:25:32 ls
+  792  2024-09-23 19:25:36 cd ..
+  793  2024-09-23 19:25:41 ls
+  794  2024-09-23 19:28:06 sudo zypper restart apache2
+  795  2024-09-23 19:28:18 sudo zypper status apache2
+  796  2024-09-23 19:28:27 systemctl status apache2
+  797  2024-09-23 19:29:53 systemctl restart apache2
+  798  2024-09-23 19:30:06 systemctl status apache2
+  799  2024-09-23 19:30:43 ls
+  800  2024-09-23 19:30:52 systemctl start apache2
+  801  2024-09-23 19:31:02 journalctl -xeu apache2.service
+  802  2024-09-23 19:31:41 systemctl start apache2
+  803  2024-09-23 19:31:52 journalctl -xeu apache2.service
+  804  2024-09-23 19:33:02 systemctl status apache2
+  805  2024-09-23 19:33:23 systemctl start apache2
+  806  2024-09-23 19:34:03 systemctl status apache2.service
+  807  2024-09-23 19:34:47 vim /etc/apache2/vhosts.d/marketpleb.com.conf
+  808  2024-09-23 19:35:07 systemctl start apache2
+  809  2024-09-23 19:43:52 sudo certbot --nginx -d www.paperillapis.org
+  810  2024-09-23 19:44:02 sudo certbot --nginx -d paperillapis.org
+  811  2024-09-23 19:46:48 sudo certbot certonly --dns-cloudflare --dns-cloudflare-credentials ~/.secrets/certbot/cloudflare.ini -d www.paperillapis.org
+  812  2024-09-23 19:47:39 ls
+  813  2024-09-23 19:48:24 cd /srv
+  814  2024-09-23 19:48:25 ls
+  815  2024-09-23 19:48:28 cd www
+  816  2024-09-23 19:48:29 ls
+  817  2024-09-23 19:48:38 cd paperillapis.org
+  818  2024-09-23 19:48:39 ls
+  819  2024-09-23 19:48:50 cd SWDIW2425
+  820  2024-09-23 19:48:52 ls
+  821  2024-09-23 19:49:34 mkdir 23-09-24
+  822  2024-09-23 19:49:40 cd 23-09-24
+  823  2024-09-23 19:49:41 ls
+  824  2024-09-23 19:51:14 cd ..
+  825  2024-09-23 19:51:17 ls
+  826  2024-09-23 19:51:19 cd ..
+  827  2024-09-23 19:51:22 ls
+  828  2024-09-23 19:51:24 cd ..
+  829  2024-09-23 19:51:25 ls
+  830  2024-09-23 19:51:35 cd /etc
+  831  2024-09-23 19:51:36 ls
+  832  2024-09-23 19:51:44 cd nginx
+  833  2024-09-23 19:51:44 ls
+  834  2024-09-23 19:51:50 cd vhosts.d
+  835  2024-09-23 19:51:50 ls
+  836  2024-09-23 19:51:58 vim paperillapis.com.conf
+  837  2024-09-23 19:53:00 cd ..
+  838  2024-09-23 19:53:00 ls
+  839  2024-09-23 19:53:03 cd ..
+  840  2024-09-23 19:53:04 ls
+  841  2024-09-23 19:53:07 cd apache2
+  842  2024-09-23 19:53:08 ls
+  843  2024-09-23 19:53:16 cd vhosts.d
+  844  2024-09-23 19:53:16 ls
+  845  2024-09-23 19:53:43 paperillapis.com.conf
+  846  2024-09-23 19:54:16 cd ..
+  847  2024-09-23 19:54:16 ls
+  848  2024-09-23 19:54:23 cd ..
+  849  2024-09-23 19:54:29 cd /srv
+  850  2024-09-23 19:54:30 ls
+  851  2024-09-23 19:54:32 cd www
+  852  2024-09-23 19:54:33 ls
+  853  2024-09-23 19:54:38 cd 2140mallorca.com
+  854  2024-09-23 19:54:39 ls
+  855  2024-09-23 19:54:46 cd ..
+  856  2024-09-23 19:54:46 ls
+  857  2024-09-23 19:54:55 cd paperillapis.org
+  858  2024-09-23 19:54:56 ls
+  859  2024-09-23 19:55:04 mkdir public_html
+  860  2024-09-23 19:55:10 cd public_html
+  861  2024-09-23 19:55:11 ls
+  862  2024-09-23 19:55:16 vim index.html
+  863  2024-09-23 19:55:40 mkdir SWDIW2425
+  864  2024-09-23 19:55:47 cd SWDIW2425
+  865  2024-09-23 19:55:48 ls
+  866  2024-09-23 19:55:55 vim index.html
+  867  2024-09-23 19:57:18 cd ..
+  868  2024-09-23 19:57:19 ls
+  869  2024-09-23 19:57:21 cd ..
+  870  2024-09-23 19:57:21 ls
+  871  2024-09-23 19:57:23 cd ..
+  872  2024-09-23 19:57:24 ls
+  873  2024-09-23 19:57:34 cd 2140mallorca.com
+  874  2024-09-23 19:57:35 ls
+  875  2024-09-23 19:57:39 cd public_html
+  876  2024-09-23 19:57:40 ls
+  877  2024-09-23 19:57:45 vim index.html
+  878  2024-09-23 19:58:12 rm -rF index.html
+  879  2024-09-23 19:58:19 rm -rf index.html
+  880  2024-09-23 19:58:21 ls
+  881  2024-09-23 19:58:25 vim index.html
+  882  2024-09-23 19:59:03 vim styles.css
+  883  2024-09-23 19:59:15 vim script.js
+  884  2024-09-23 20:01:34 ls
+  885  2024-09-23 20:02:00 rm -rf index.html
+  886  2024-09-23 20:02:05 rm -rf script.js
+  887  2024-09-23 20:02:13 rm -rf styles.css
+  888  2024-09-23 20:02:19 vim index.html
+  889  2024-09-23 20:02:46 vim styles.css
+  890  2024-09-23 20:03:02 vim script.js
+  891  2024-09-23 20:04:17 ls
+  892  2024-09-23 20:04:21 vim index.html
+  893  2024-09-23 20:05:39 vim script.js
+  894  2024-09-23 20:06:26 vim index.html
+  895  2024-09-23 20:15:46 vim script.js
+  896  2024-09-23 20:18:08 vim index.html
+  897  2024-09-23 20:28:57 vim script.js
+  898  2024-09-23 20:33:40 vim index.html
+  899  2024-10-01 21:43:00 ls
+  900  2024-10-01 21:43:09 systemctl status apache2
+  901  2024-10-01 21:43:12 ls
+  902  2024-10-01 21:43:19 cd /srv
+  903  2024-10-01 21:43:19 ls
+  904  2024-10-01 21:43:21 cd www
+  905  2024-10-01 21:43:22 ls
+  906  2024-10-01 21:43:29 cd ..
+  907  2024-10-01 21:43:38 cd /etc/apache2
+  908  2024-10-01 21:43:39 ls
+  909  2024-10-01 21:43:48 vim listen.conf
+  910  2024-10-01 21:44:00 ls
+  911  2024-10-01 21:44:03 cd vhosts.d
+  912  2024-10-01 21:44:04 ls
+  913  2024-10-01 21:44:25 vim paperillapis.com.conf
+  914  2024-10-01 21:44:42 vim paperillapis.org.conf
+  915  2024-10-01 21:45:15 cd ..
+  916  2024-10-01 21:45:21 cd nginx
+  917  2024-10-01 21:45:22 ls
+  918  2024-10-01 21:45:27 cd vhosts.d
+  919  2024-10-01 21:45:28 ls
+  920  2024-10-01 21:45:42 rm -rf paperillapìs.com.conf
+  921  2024-10-01 21:45:50 vim paperillapis.com.conf
+  922  2024-10-01 21:46:05 rm -rf paperillapis.com.conf
+  923  2024-10-01 21:46:14 vim paperillapis.org.conf
+  924  2024-10-01 21:46:39 cd ..
+  925  2024-10-01 21:46:46 cd apache2
+  926  2024-10-01 21:46:47 ls
+  927  2024-10-01 21:46:52 cd vhosts.d
+  928  2024-10-01 21:46:52 ls
+  929  2024-10-01 21:47:05 rm -rf paperillapis.com.conf
+  930  2024-10-01 21:47:13 vim paperillapis.org.conf
+  931  2024-10-01 21:47:39 systemctl restart apache2
+  932  2024-10-01 21:47:44 systemctl restart nginx
+  933  2024-10-01 21:48:36 cd /srv/www
+  934  2024-10-01 21:48:37 ls
+  935  2024-10-01 21:48:43 cd paperillapis.org
+  936  2024-10-01 21:48:45 ls
+  937  2024-10-01 21:48:49 cd public_html
+  938  2024-10-01 21:48:50 ls
+  939  2024-10-01 21:48:56 vim index.html
+  940  2024-10-01 21:51:54 rm -rf index.html
+  941  2024-10-01 21:51:58 vim index.html
+  942  2024-10-01 21:54:18 rm -rf index.html
+  943  2024-10-01 21:55:06 vim index.html 
+  944  2024-10-16 17:33:20 ls
+  945  2024-10-16 17:33:28 cd /etc
+  946  2024-10-16 17:33:28 ls
+  947  2024-10-16 17:33:32 cd apache3
+  948  2024-10-16 17:33:34 cd apache2
+  949  2024-10-16 17:33:35 ls
+  950  2024-10-16 17:34:21 cd vhosts.d
+  951  2024-10-16 17:34:22 ls
+  952  2024-10-16 17:37:39 cd ..
+  953  2024-10-16 17:37:39 ls
+  954  2024-10-16 17:38:30 cd vhosts.d
+  955  2024-10-16 17:38:31 ls
+  956  2024-10-16 17:39:42 vim 2140mallorca.com.conf
+  957  2024-10-16 17:44:32 ls
+  958  2024-10-16 17:44:33 cd ..
+  959  2024-10-16 17:44:34 ls
+  960  2024-10-16 17:44:51 vim httpd.conf
+  961  2024-10-16 17:45:51 ls
+  962  2024-10-16 17:45:55 cd vhosts.d
+  963  2024-10-16 17:45:55 ls
+  964  2024-10-16 17:46:03 vim vhost.template
+  965  2024-10-16 17:46:33 ls
+  966  2024-10-16 17:46:39 vim 2140mallorca.com.conf
+  967  2024-10-16 18:00:23 cd ..
+  968  2024-10-16 18:00:28 cd nginx
+  969  2024-10-16 18:00:28 ls
+  970  2024-10-16 18:02:13 cd conf.d
+  971  2024-10-16 18:02:13 ls
+  972  2024-10-16 18:02:23 cd ..
+  973  2024-10-16 18:02:25 ls
+  974  2024-10-16 18:02:30 cd vhosts.d
+  975  2024-10-16 18:02:31 ls
+  976  2024-10-16 18:09:09 python 
+  977  2024-10-16 18:09:12 cnf python
+  978  2024-10-16 18:09:25 zypper install python-base
+  979  2024-10-16 18:10:19 python
+  980  2024-10-16 18:10:33 systemctl start python
+  981  2024-10-16 18:10:41 systemctl status python
+  982  2024-10-16 18:11:07 sudo zypper install python3.11-venv
+  983  2024-10-16 18:11:20 cnf python3
+  984  2024-10-16 18:11:33 python3
+  985  2024-10-22 19:58:22 cd etc
+  986  2024-10-22 19:58:28 cd /etc
+  987  2024-10-22 19:58:29 ls
+  988  2024-10-22 19:58:34 cd apache2
+  989  2024-10-22 19:58:35 ls
+  990  2024-10-22 19:58:40 cd vhosts.d
+  991  2024-10-22 19:58:40 ls
+  992  2024-10-22 19:58:52 vim 2140mallorca.com.conf
+  993  2024-10-22 19:59:19 cd ..
+  994  2024-10-22 19:59:21 tree
+  995  2024-10-22 20:01:37 cd /srv
+  996  2024-10-22 20:01:38 ls
+  997  2024-10-22 20:01:40 cd www
+  998  2024-10-22 20:01:41 ls
+  999  2024-10-22 20:01:46 vim .htaccess
+ 1000  2024-10-30 16:24:38 ls
+ 1001  2024-11-06 22:37:41 sudo zypper install redis
+ 1002  2024-11-06 22:38:21 sudo systemctl start redis
+ 1003  2024-11-06 22:38:43 sudo zypper install redis-server
+ 1004  2024-11-06 22:38:57 cnf redis
+ 1005  2024-11-06 22:39:13 systemctl list-units | grep redis
+ 1006  2024-11-06 22:39:25 sudo systemctl daemon-reload
+ 1007  2024-11-06 22:39:33 sudo systemctl start redis
+ 1008  2024-11-06 22:39:41 sudo systemctl enable redis
+ 1009  2024-11-06 22:40:10 sudo zypper refresh
+ 1010  2024-11-06 22:40:18 sudo zypper install redis
+ 1011  2024-11-06 22:40:45 systemctl list-units | grep redis
+ 1012  2024-11-06 22:40:54 redis-server /etc/redis.conf
+ 1013  2024-11-06 22:41:04 sudo vim /etc/systemd/system/redis.service
+ 1014  2024-11-06 22:41:20 sudo systemctl daemon-reload
+ 1015  2024-11-06 22:41:26 sudo systemctl start redis
+ 1016  2024-11-06 22:41:37 sudo systemctl enable redis
+ 1017  2024-11-06 22:41:44 redis-cli ping
+ 1018  2024-11-06 22:42:13 sudo vim /etc/redis.conf
+ 1019  2024-11-06 22:44:37 redis-server /etc/redis.conf
+ 1020  2024-11-06 22:44:49 redis-cli ping
+ 1021  2024-11-06 22:49:57 redis-server /etc/redis.conf
+ 1022  2024-11-06 22:50:01 sudo vim /etc/redis.conf
+ 1023  2024-11-06 22:50:46 redis-server /etc/redis.conf
+ 1024  2024-11-06 22:50:50 redis-cli ping
+ 1025  2024-11-06 22:52:52 cd srv
+ 1026  2024-11-06 22:52:55 cd /srv
+ 1027  2024-11-06 22:52:56 ls
+ 1028  2024-11-06 22:52:59 cd www
+ 1029  2024-11-06 22:52:59 ls
+ 1030  2024-11-06 22:53:04 cd farmacabrer.com
+ 1031  2024-11-06 22:53:04 ls
+ 1032  2024-11-06 22:53:11 cd public_html
+ 1033  2024-11-06 22:53:12 ls
+ 1034  2024-11-06 22:53:14 pwdf
+ 1035  2024-11-06 22:53:15 pwd
+ 1036  2024-11-06 23:02:38 sudo journalctl -u gunicorn
+ 1037  2024-11-06 23:11:41 cd etc
+ 1038  2024-11-06 23:11:44 cd /etc
+ 1039  2024-11-06 23:11:49 cd /nginx
+ 1040  2024-11-06 23:11:50 ls
+ 1041  2024-11-06 23:11:57 cd nginx
+ 1042  2024-11-06 23:11:57 ls
+ 1043  2024-11-06 23:12:08 cd vhosts.d
+ 1044  2024-11-06 23:12:08 ñls
+ 1045  2024-11-06 23:12:10 ls
+ 1046  2024-11-06 23:12:20 vim farmacabrer.com.conf
+ 1047  2024-11-06 23:19:28 cd ..
+ 1048  2024-11-06 23:19:34 mkdir snippets
+ 1049  2024-11-06 23:19:44 vim ss-params.conf
+ 1050  2024-11-06 23:20:31 rm -rf ss-params.conf
+ 1051  2024-11-06 23:20:40 vim ssl-params.conf
+ 1052  2024-11-06 23:20:53 vim security-headers.conf
+ 1053  2024-11-06 23:25:35 cd ..
+ 1054  2024-11-06 23:25:35 ls
+ 1055  2024-11-06 23:25:38 cd apache
+ 1056  2024-11-06 23:25:42 cd apache2
+ 1057  2024-11-06 23:25:43 ls
+ 1058  2024-11-06 23:25:48 vim listen.conf
+ 1059  2024-11-06 23:26:25 cd ..
+ 1060  2024-11-06 23:26:30 cd /srv
+ 1061  2024-11-06 23:26:31 ls
+ 1062  2024-11-06 23:26:33 cd www
+ 1063  2024-11-06 23:26:33 ls
+ 1064  2024-11-06 23:26:51 cd farmacabrer.com
+ 1065  2024-11-06 23:26:52 ls
+ 1066  2024-11-06 23:26:59 cd public_html
+ 1067  2024-11-06 23:27:01 pwd
+ 1068  2024-11-06 23:28:19 getent group www
+ 1069  2024-11-06 23:28:28 getent group wwwrun
+ 1070  2024-11-06 23:28:57 rm -rf requirements.txt
+ 1071  2024-11-06 23:29:05 vim requirements.txt
+ 1072  2024-11-06 23:29:20 source venv/bin/activate
+ 1073  2024-11-06 23:29:30 pip install requirements.txt
+ 1074  2024-11-06 23:29:37 pip install -r requirements.txt
+ 1075  2024-11-06 23:29:50 pip
+ 1076  2024-11-06 23:30:03 cd ..
+ 1077  2024-11-06 23:30:08 ls
+ 1078  2024-11-06 23:30:11 vim permisos
+ 1079  2024-11-06 23:31:18 getent group
+ 1080  2024-11-06 23:31:56 pip install gunicorn
+ 1081  2024-11-06 23:34:06 ls
+ 1082  2024-11-06 23:34:14 cd www
+ 1083  2024-11-06 23:34:15 ls
+ 1084  2024-11-06 23:34:23 cd farmacabrer.com
+ 1085  2024-11-06 23:34:23 ls
+ 1086  2024-11-06 23:34:28 cd public_html
+ 1087  2024-11-06 23:34:30 ls
+ 1088  2024-11-06 23:34:37 pip install gunicorn
+ 1089  2024-11-06 23:34:40 ls
+ 1090  2024-11-06 23:34:53 cd venv
+ 1091  2024-11-06 23:34:55 cd bin
+ 1092  2024-11-06 23:34:56 ls
+ 1093  2024-11-06 23:35:07 cd gunicorn
+ 1094  2024-11-06 23:35:08 ls
+ 1095  2024-11-06 23:35:55 cd ..
+ 1096  2024-11-06 23:36:02 pip show gunicorn
+ 1097  2024-11-06 23:36:14 which gunicorn
+ 1098  2024-11-06 23:37:47 which pip
+ 1099  2024-11-06 23:38:06 which python
+ 1100  2024-11-06 23:38:40 deactivate
+ 1101  2024-11-06 23:38:50 rm -rf venv
+ 1102  2024-11-06 23:38:55 python3 -m venv venv
+ 1103  2024-11-06 23:39:03 source venv/bin/activate
+ 1104  2024-11-06 23:39:36 which python
+ 1105  2024-11-06 23:39:47 which pip
+ 1106  2024-11-06 23:39:53 pip install --upgrade pip
+ 1107  2024-11-06 23:40:01 pip install -r requirements.txt
+ 1108  2024-11-06 23:40:11 pip install gunicorn
+ 1109  2024-11-06 23:40:21 which gunicorn
+ 1110  2024-11-06 23:40:37 vim /etc/systemd/system/gunicorn.service
+ 1111  2024-11-06 23:40:58 sudo systemctl daemon-reload
+ 1112  2024-11-06 23:41:07 sudo systemctl restart gunicorn
+ 1113  2024-11-06 23:41:14 sudo systemctl enable gunicorn
+ 1114  2024-11-06 23:41:20 sudo systemctl status gunicorn
+ 1115  2024-11-06 23:41:37 sudo journalctl -u gunicorn
+ 1116  2024-11-06 23:42:16 sudo lsof -i :8083
+ 1117  2024-11-06 23:43:06 sudo systemctl restart apache2
+ 1118  2024-11-06 23:43:11 sudo lsof -i :8083
+ 1119  2024-11-06 23:43:18 sudo systemctl restart gunicorn
+ 1120  2024-11-06 23:43:25 sudo systemctl status gunicorn
+ 1121  2024-11-06 23:44:29 ls -l /srv/www/farmacabrer.com/public_html/wsgi.py
+ 1122  2024-11-06 23:44:38 find /srv/www/farmacabrer.com/public_html -name wsgi.py
+ 1123  2024-11-06 23:46:01 vim /etc/systemd/system/gunicorn.service
+ 1124  2024-11-06 23:46:36 sudo systemctl daemon-reload
+ 1125  2024-11-06 23:46:41 sudo systemctl restart gunicorn
+ 1126  2024-11-06 23:46:45 sudo systemctl status gunicorn
+ 1127  2024-11-06 23:47:33 pip install Flask_SQLAlchemy
+ 1128  2024-11-06 23:47:49 pip install Flask
+ 1129  2024-11-06 23:47:59 deactivate
+ 1130  2024-11-06 23:48:04 sudo systemctl daemon-reload
+ 1131  2024-11-06 23:48:08 sudo systemctl restart gunicorn
+ 1132  2024-11-06 23:48:14 sudo systemctl status gunicorn
+ 1133  2024-11-06 23:48:30 source venv/bin/activate
+ 1134  2024-11-06 23:48:38 pip install flask_login
+ 1135  2024-11-06 23:48:42 deactivate
+ 1136  2024-11-06 23:48:47 sudo systemctl daemon-reload
+ 1137  2024-11-06 23:48:52 sudo systemctl restart gunicorn
+ 1138  2024-11-06 23:49:02 sudo systemctl status gunicorn
+ 1139  2024-11-06 23:49:11 source venv/bin/activate
+ 1140  2024-11-06 23:49:20 pip install flask_wtf
+ 1141  2024-11-06 23:49:29 pip install -r requirements.txt
+ 1142  2024-11-06 23:49:37 pip freeze
+ 1143  2024-11-06 23:50:42 vim requierements.txt
+ 1144  2024-11-06 23:51:03 pip install -r requirements.txt
+ 1145  2024-11-06 23:51:26 vim requierements.txt
+ 1146  2024-11-06 23:51:48 pip install -r requirements.txt
+ 1147  2024-11-06 23:52:26 ls
+ 1148  2024-11-06 23:52:45 rm -rf requirements.txt
+ 1149  2024-11-06 23:52:48 rm -rf requierements.txt
+ 1150  2024-11-06 23:52:56 vim requirements.txt
+ 1151  2024-11-06 23:53:21 pip install -r requirements.txt
+ 1152  2024-11-06 23:54:34 sudo systemctl daemon-reload
+ 1153  2024-11-06 23:54:41 sudo systemctl restart gunicorn
+ 1154  2024-11-06 23:54:56 sudo systemctl status gunicorn
+ 1155  2024-11-06 23:55:13 pip install pipdeptree
+ 1156  2024-11-06 23:55:22 grep -rnw '/srv/www/farmacabrer.com/public_html' -e 'aider'
+ 1157  2024-11-06 23:55:31 find /srv/www/farmacabrer.com/public_html -name "requirements*.txt"
+ 1158  2024-11-06 23:55:58 pip install -r /srv/www/farmacabrer.com/public_html/requirements.txt
+ 1159  2024-11-06 23:56:09 pip uninstall aider-chat
+ 1160  2024-11-06 23:56:20 pip cache purge
+ 1161  2024-11-06 23:56:25 pip install -r /srv/www/farmacabrer.com/public_html/requirements.txt
+ 1162  2024-11-06 23:58:01 vim /srv/www/farmacabrer.com/public_html/requirements.txt
+ 1163  2024-11-06 23:58:54 pipdeptree > dependencies.txt
+ 1164  2024-11-06 23:59:02 vim dependencies.txt
+ 1165  2024-11-07 00:00:05 ls
+ 1166  2024-11-07 00:00:25 vim requirements.sh
+ 1167  2024-11-07 00:00:41 chmod +x requirements.sh
+ 1168  2024-11-07 00:00:49 ./requirements.sh
+ 1169  2024-11-07 00:08:44 sudo systemctl daemon-reload
+ 1170  2024-11-07 00:08:53 sudo systemctl restart gunicorn
+ 1171  2024-11-07 00:09:09 sudo systemctl status gunicorn
+ 1172  2024-11-07 00:09:21 pip install flask_migrate
+ 1173  2024-11-07 00:09:33 sudo systemctl restart gunicorn
+ 1174  2024-11-07 00:09:35 sudo systemctl status gunicorn
+ 1175  2024-11-07 00:09:44 pip install flask_limiter
+ 1176  2024-11-07 00:09:48 sudo systemctl restart gunicorn
+ 1177  2024-11-07 00:09:52 sudo systemctl status gunicorn
+ 1178  2024-11-07 00:09:59 pip install reportlab
+ 1179  2024-11-07 00:11:17 sudo zypper install build-essential
+ 1180  2024-11-07 00:11:36 sudo zypper install -t pattern devel_C_C++
+ 1181  2024-11-07 00:12:24 sudo zypper install freetype2-devel libpng16-devel
+ 1182  2024-11-07 00:12:43 pip install reportlab
+ 1183  2024-11-07 00:13:22 pip install --upgrade pip setuptools
+ 1184  2024-11-07 00:13:30 pip install problematic-dependency==required-version
+ 1185  2024-11-07 00:14:06 vim requirements.py
+ 1186  2024-11-07 00:15:06 pip install subprocess
+ 1187  2024-11-07 00:15:15 pip install re
+ 1188  2024-11-07 00:15:24 python requirements.py
+ 1189  2024-11-07 00:19:18 pip cache pure
+ 1190  2024-11-07 00:19:21 pip cache purge
+ 1191  2024-11-07 00:19:34 rm -rf requirements.txt
+ 1192  2024-11-07 00:19:41 vim requirements.txt
+ 1193  2024-11-07 00:19:53 python requirements.py
+ 1194  2024-11-07 00:22:24 python -m pip install --upgrade pip
+ 1195  2024-11-07 00:22:38 rm -rf requirements.txt
+ 1196  2024-11-07 00:22:44 vim requirements.txt
+ 1197  2024-11-07 00:22:54 python requirements.py
+ 1198  2024-11-07 00:23:38 sudo systemctl restart gunicorn
+ 1199  2024-11-07 00:23:46 sudo systemctl status gunicorn
+ 1200  2024-11-07 00:23:52 pip install reportlab
+ 1201  2024-11-07 00:24:02 sudo pip install reportlab
+ 1202  2024-11-07 00:25:17 sudo zypper install python36-devel
+ 1203  2024-11-07 00:25:33 sudo zypper install gcc gcc-c++ make
+ 1204  2024-11-07 00:26:12 python --version
+ 1205  2024-11-07 00:26:59 pip install --upgrade pip setuptools
+ 1206  2024-11-07 00:28:01 python --version
+ 1207  2024-11-07 00:28:01 python3 --version
+ 1208  2024-11-07 00:28:20 sudo zypper install python310 python310-devel
+ 1209  2024-11-07 00:28:45 sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
+ 1210  2024-11-07 00:28:45 sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 2
+ 1211  2024-11-07 00:28:45 sudo update-alternatives --config python3
+ 1212  2024-11-07 00:31:05 rm -rf /srv/www/farmacabrer.com/public_html/venv
+ 1213  2024-11-07 00:31:11 deactivate
+ 1214  2024-11-07 00:31:12 rm -rf /srv/www/farmacabrer.com/public_html/venv
+ 1215  2024-11-07 00:31:17 python3.10 -m venv /srv/www/farmacabrer.com/public_html/venv
+ 1216  2024-11-07 00:31:26 source /srv/www/farmacabrer.com/public_html/venv/bin/activate
+ 1217  2024-11-07 00:31:30 pip install --upgrade pip setuptools
+ 1218  2024-11-07 00:34:32 pip install pip-review
+ 1219  2024-11-07 00:34:41 pip-review --interactive
+ 1220  2024-11-07 00:34:48 pip-review --auto
+ 1221  2024-11-07 00:35:07 pip install --upgrade pip setuptools
+ 1222  2024-11-07 00:35:18 python --version
+ 1223  2024-11-07 00:35:28 python requirements.py
+ 1224  2024-11-07 00:36:03 pip install Werkzeug
+ 1225  2024-11-07 00:36:17 pip install Werkzeug>=3.0.0
+ 1226  2024-11-07 00:36:25 pip install Werkzeug=3.0.0
+ 1227  2024-11-07 00:37:24 pip install reportlab
+ 1228  2024-11-07 00:37:39 pip uninstall jinja2
+ 1229  2024-11-07 00:37:47 pip install jinja2
+ 1230  2024-11-07 00:38:18 pip install --upgrade pip
+ 1231  2024-11-07 00:38:24 pip install pip-tools
+ 1232  2024-11-07 00:38:44 vim requirements.in
+ 1233  2024-11-07 00:42:51 pip-compile requirements.in
+ 1234  2024-11-07 00:43:26 python requirements.py
+ 1235  2024-11-07 00:43:42 pip purge
+ 1236  2024-11-07 00:44:04 pip cache purge
+ 1237  2024-11-07 00:44:08 python requirements.py
+ 1238  2024-11-07 00:44:27 pip cache remove *
+ 1239  2024-11-07 00:44:35 find . -type d -name __pycache__ -exec rm -r {} +
+ 1240  2024-11-07 00:45:04 systeminfo
+ 1241  2024-11-07 00:45:10 python requirements.py
+ 1242  2024-11-07 00:45:39 sudo systemctl restart gunicorn
+ 1243  2024-11-07 00:45:43 sudo systemctl start gunicorn
+ 1244  2024-11-07 00:45:51 sudo systemctl status gunicorn
+ 1245  2024-11-07 00:46:30 journalctl gunicorn.service
+ 1246  2024-11-07 00:47:23 journalctl -u gunicorn.service
+ 1247  2024-11-07 00:48:10 systemctl daemon-reload
+ 1248  2024-11-07 00:48:16 systemctl restart gunicorn
+ 1249  2024-11-07 00:48:22 systemctl status gunicorn
+ 1250  2024-11-07 00:48:55 vim /srv/www/farmacabrer.com/public_html/venv/bin/gunicorn
+ 1251  2024-11-07 00:49:06 systemctl daemon-reload
+ 1252  2024-11-07 00:49:10 systemctl restart gunicorn
+ 1253  2024-11-07 00:49:14 systemctl status gunicorn
+ 1254  2024-11-07 00:49:33 chmod +x /srv/www/farmacabrer.com/public_html/venv/bin/gunicorn
+ 1255  2024-11-07 00:49:36 systemctl daemon-reload
+ 1256  2024-11-07 00:49:39 systemctl restart gunicorn
+ 1257  2024-11-07 00:49:41 systemctl status gunicorn
+ 1258  2024-11-07 00:50:28 vim /srv/www/farmacabrer.com/public_html/venv/bin/gunicorn
+ 1259  2024-11-07 00:50:40 rm /srv/www/farmacabrer.com/public_html/venv/bin/gunicorn
+ 1260  2024-11-07 00:50:42 vim /srv/www/farmacabrer.com/public_html/venv/bin/gunicorn
+ 1261  2024-11-07 00:51:37 getent groups
+ 1262  2024-11-07 00:51:44 getent group
+ 1263  2024-11-07 00:52:09 rm /srv/www/farmacabrer.com/public_html/venv/bin/gunicorn
+ 1264  2024-11-07 00:52:12 vim /srv/www/farmacabrer.com/public_html/venv/bin/gunicorn
+ 1265  2024-11-07 00:52:21 chmod +x /srv/www/farmacabrer.com/public_html/venv/bin/gunicorn
+ 1266  2024-11-07 00:52:40 chown -R wwwrun:www /srv/www/farmacabrer.com/public_html/venv
+ 1267  2024-11-07 00:52:43 chown -R wwwrun:www /srv/www/farmacabrer.com/public_html
+ 1268  2024-11-07 00:52:48 chown wwwrun:www /srv/www/farmacabrer.com/public_html/app.py
+ 1269  2024-11-07 00:52:53 ls -la /srv/www/farmacabrer.com/public_html
+ 1270  2024-11-07 00:53:10 systemctl daemon-reload
+ 1271  2024-11-07 00:53:17 systemctl restart gunicorn
+ 1272  2024-11-07 00:53:23 systemctl status gunicorn
+ 1273  2024-11-07 00:53:50 rm /srv/www/farmacabrer.com/public_html/venv/bin/gunicorn
+ 1274  2024-11-07 00:53:55 vim /srv/www/farmacabrer.com/public_html/venv/bin/gunicorn
+ 1275  2024-11-07 00:54:02 systemctl daemon-reload
+ 1276  2024-11-07 00:54:04 systemctl restart gunicorn
+ 1277  2024-11-07 00:54:07 systemctl status gunicorn
+ 1278  2024-11-07 00:54:36 rm /srv/www/farmacabrer.com/public_html/venv/bin/gunicorn
+ 1279  2024-11-07 00:54:39 vim /srv/www/farmacabrer.com/public_html/venv/bin/gunicorn
+ 1280  2024-11-07 00:54:49 systemctl daemon-reload
+ 1281  2024-11-07 00:54:52 systemctl restart gunicorn
+ 1282  2024-11-07 00:54:56 systemctl status gunicorn
+ 1283  2024-11-07 00:55:53 rm /srv/www/farmacabrer.com/public_html/venv/bin/gunicorn
+ 1284  2024-11-07 00:55:55 vim /srv/www/farmacabrer.com/public_html/venv/bin/gunicorn
+ 1285  2024-11-07 00:56:03 systemctl restart gunicorn
+ 1286  2024-11-07 00:56:10 chmod 755 /srv/www/farmacabrer.com/public_html
+ 1287  2024-11-07 00:56:16 systemctl status gunicorn
+ 1288  2024-11-07 00:56:40 chmod +x /srv/www/farmacabrer.com/public_html/venv/bin/gunicorn
+ 1289  2024-11-07 00:56:44 systemctl restart gunicorn
+ 1290  2024-11-07 00:56:46 systemctl status gunicorn
+ 1291  2024-11-07 00:57:12 sudo find /srv/www/farmacabrer.com/public_html/venv -type f -exec chmod 644 {} \;
+ 1292  2024-11-07 00:57:15 sudo chmod +x /srv/www/farmacabrer.com/public_html/venv/bin/*
+ 1293  2024-11-07 00:57:28 deactivate
+ 1294  2024-11-07 00:57:30 sudo find /srv/www/farmacabrer.com/public_html/venv -type f -exec chmod 644 {} \;
+ 1295  2024-11-07 00:57:35 sudo chmod +x /srv/www/farmacabrer.com/public_html/venv/bin/*
+ 1296  2024-11-07 00:57:45 sudo -u wwwrun -i
+ 1297  2024-11-07 00:57:55 source venv/bin/activate
+ 1298  2024-11-07 00:57:57 sudo -u wwwrun -i
+ 1299  2024-11-07 00:58:19 /srv/www/farmacabrer.com/public_html/venv/bin/python3 -m gunicorn --workers 3 --bind 127.0.0.1:8083 app:app
+ 1300  2024-11-07 00:58:35 sudo chown -R wwwrun:www /srv/www/farmacabrer.com/public_html
+ 1301  2024-11-07 00:58:58 rm /srv/www/farmacabrer.com/public_html/venv/bin/gunicorn
+ 1302  2024-11-07 00:59:03 vim /srv/www/farmacabrer.com/public_html/venv/bin/gunicorn
+ 1303  2024-11-07 00:59:13 sudo chmod +x /srv/www/farmacabrer.com/public_html/venv/bin/*
+ 1304  2024-11-07 00:59:44 systemctl restart gunicorn
+ 1305  2024-11-07 00:59:53 systemctl daemon-reload
+ 1306  2024-11-07 00:59:59 systemctl restart gunicorn
+ 1307  2024-11-07 01:00:03 systemctl start gunicorn
+ 1308  2024-11-07 01:00:08 systemctl status gunicorn
+ 1309  2024-11-07 01:00:22 pip install gunicorn
+ 1310  2024-11-07 01:00:33 systemctl daemon-reload
+ 1311  2024-11-07 01:00:36 systemctl start gunicorn
+ 1312  2024-11-07 01:00:40 systemctl status gunicorn
+ 1313  2024-11-07 01:00:57 pip install flask_limiter
+ 1314  2024-11-07 01:01:02 systemctl start gunicorn
+ 1315  2024-11-07 01:01:05 systemctl status gunicorn
+ 1316  2024-11-07 01:01:53 sudo chmod +x /srv/www/farmacabrer.com/public_html/venv/bin/*
+ 1317  2024-11-07 01:02:00 systemctl restart gunicorn
+ 1318  2024-11-07 01:02:06 systemctl status gunicorn
+ 1319  2024-11-07 01:02:20 pip install openpyxl
+ 1320  2024-11-07 01:02:23 systemctl restart gunicorn
+ 1321  2024-11-07 01:02:27 sudo chmod +x /srv/www/farmacabrer.com/public_html/venv/bin/*
+ 1322  2024-11-07 01:02:29 systemctl restart gunicorn
+ 1323  2024-11-07 01:02:36 systemctl status gunicorn
+ 1324  2024-11-07 01:02:47 pip install redis
+ 1325  2024-11-07 01:02:56 sudo chmod +x /srv/www/farmacabrer.com/public_html/venv/bin/*
+ 1326  2024-11-07 01:03:01 systemctl restart gunicorn
+ 1327  2024-11-07 01:03:03 systemctl status gunicorn
+ 1328  2024-11-07 01:04:30 curl http://127.0.0.1:8083
+ 1329  2024-11-07 01:09:01 vim app.py
+ 1330  2024-11-07 01:11:33 python -c "import secrets; print(secrets.token_hex(32))"
+ 1331  2024-11-07 01:11:40 vim app.py
+ 1332  2024-11-07 01:12:29 history
+

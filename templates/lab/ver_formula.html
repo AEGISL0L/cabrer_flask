@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-fluid mt-4 px-4">
+    <div class="card shadow-sm" style="background-color: #ffffff; max-width: 1600px; margin: 0 auto;">
+        <div class="card-header bg-white border-bottom">
+            <h3 class="mb-0">Detalls de la fórmula #{{ formula.petition_id }}</h3>
+        </div>
+        <div class="card-body">
+            <div class="row g-4">
+                <div class="col-12 col-lg-8">
+                    <h5 class="mb-3">Informació general</h5>
+                    <dl class="row g-3">
+                        <dt class="col-sm-4 text-muted">Nom</dt>
+                        <dd class="col-sm-8 fw-semibold">{{ formula.nombre }}</dd>
+                        
+                        <dt class="col-sm-4 text-muted">Estat</dt>
+                        <dd class="col-sm-8">
+                            <div class="d-flex align-items-start">
+                                <span class="badge rounded-pill bg-{{ 'success' if formula.estado == 'Completado' else 'warning' }} px-3">
+                                    {{ formula.estado }}
+                                </span>
+                                {% if current_user.rol in [RoleEnum.ADMIN, RoleEnum.PROFESOR] %}
+                                    <form action="{{ url_for('cambiar_estado_formula', petition_id=formula.petition_id) }}" method="POST" class="ms-2">
+                                        <div class="input-group">
+                                            <select name="estado" class="form-select">
+                                                <option value="Pendiente" {% if formula.estado == 'Pendiente' %}selected{% endif %}>Pendiente</option>
+                                                <option value="En Preparación" {% if formula.estado == 'En Preparación' %}selected{% endif %}>En Preparación</option>
+                                                <option value="Completado" {% if formula.estado == 'Completado' %}selected{% endif %}>Completado</option>
+                                                <option value="Cancelado" {% if formula.estado == 'Cancelado' %}selected{% endif %}>Cancelado</option>
+                                            </select>
+                                            <button type="submit" class="btn btn-primary">Actualizar Estado</button>
+                                        </div>
+                                    </form>
+                                {% endif %}
+                            </div>
+                        </dd>                        
+                        <dt class="col-sm-4 text-muted">Data sol·licitud</dt>
+                        <dd class="col-sm-8">{{ formula.fecha_solicitud.strftime('%Y-%m-%d %H:%M') }}</dd>
+                        
+                        <dt class="col-sm-4 text-muted">Telèfon</dt>
+                        <dd class="col-sm-8"><i class="bi bi-telephone-fill me-2"></i>{{ formula.telefono_contacto }}</dd>
+                        
+                        <dt class="col-sm-4 text-muted">Requereix RELE?</dt>
+                        <dd class="col-sm-8">
+                            <i class="bi bi-{{ 'check-circle-fill text-success' if formula.requiere_rele == 'Si' else 'x-circle-fill text-danger' }} me-2"></i>
+                            {{ formula.requiere_rele }}
+                        </dd>
+                    </dl>
+                    
+                </div>
+                <div class="col-12 col-lg-4">
+                    {% if formula.foto_receta_path %}
+                    <h5 class="mb-3">Recepta</h5>
+                    <div class="ratio ratio-16x9 shadow-sm rounded overflow-hidden">
+                        <img src="{{ url_for('static', filename='uploads/' + formula.foto_receta_path) }}"
+                              class="img-fluid object-fit-cover hover-zoom" alt="Recepta" 
+                              onclick="window.open(this.src, '_blank')" style="cursor: pointer; transition: transform .3s;">
+                    </div>
+                    {% endif %}
+                </div>
+            </div>            
+            <div class="row mt-4">
+                <div class="col-12">
+                    <h5 class="mb-3">Descripció</h5>
+                    <p class="mb-0">{{ formula.descripcion }}</p>
+                </div>
+            </div>
+            {% if current_user.rol in [RoleEnum.ADMIN, RoleEnum.PROFESOR] %}
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5>Notes de Laboratori</h5>
+                        <div>
+                            <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#notasModal">
+                                Afegir/Editar Notes
+                            </button>
+                            <a href="{{ url_for('ver_timeline_formula', petition_id=formula.petition_id) }}" class="btn btn-primary">Veure Timeline</a>
+                        </div>
+                    </div>
+                    <p class="mt-3">{{ formula.notas_laboratorio }}</p>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="notasModal" tabindex="-1" aria-labelledby="notasModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="notasModalLabel">Notas de Laboratorio</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form action="{{ url_for('agregar_notas_formula', petition_id=formula.petition_id) }}" method="POST">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <textarea name="notas_laboratorio" class="form-control" rows="4">{{ formula.notas_laboratorio }}</textarea>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="submit" class="btn btn-primary">Guardar Notas</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% endif %}        </div>
+    </div>
+    
+</div>
+{% endblock %}

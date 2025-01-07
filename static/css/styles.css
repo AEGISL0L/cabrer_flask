@@ -1,0 +1,23 @@
+:root {
+    --bs-primary: #A0007A;
+    --bs-secondary: #6A006A;
+    --bs-info: #FF73D3;
+    --bs-light: #E8B6FF;
+    --bs-dark: #333333;
+    --bs-gray-100: #F0F0F0;
+    --bs-body-bg: #F0F0F0;
+    --bs-body-color: #333333;
+}
+
+.navbar {
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.alert {
+    margin-bottom: 1rem;
+}
+

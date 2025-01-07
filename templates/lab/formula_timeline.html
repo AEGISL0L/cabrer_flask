@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid mt-4 px-4">
+    <div class="card shadow-sm" style="background-color: #ffffff; max-width: 1600px; margin: 0 auto;">
+        <div class="card-header bg-white border-bottom d-flex align-items-center">
+            <i class="fas fa-history me-2 fa-lg text-primary"></i>
+            <h3 class="mb-0">Timeline Fórmula #{{ formula.petition_id }}</h3>
+        </div>
+        <div class="card-body">
+            <div class="timeline">
+                {% for activity in activities %}
+                    <div class="timeline-item hover-shadow">
+                        <div class="timeline-marker {{ 'bg-primary' if activity.tipo == 'estado' else 'bg-info' }}"></div>
+                        <div class="timeline-content p-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h5 class="timeline-title mb-0 text-primary">
+                                    <i class="fas fa-clock me-2"></i>
+                                    {{ activity.fecha.strftime('%Y-%m-%d %H:%M') }}
+                                </h5>
+                                {% if activity.usuario %}
+                                    <span class="badge bg-light text-dark">
+                                        <i class="fas fa-user me-1"></i>
+                                        {{ activity.usuario }}
+                                    </span>
+                                {% endif %}
+                            </div>
+                            <hr class="my-2">
+                            <p class="mb-0">{{ activity.detalle }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="card-footer bg-light">
+            <a href="{{ url_for('ver_formula', petition_id=formula.petition_id) }}" class="btn btn-outline-primary">
+                <i class="fas fa-arrow-left me-2"></i>Tornar a la fórmula
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline-item {
+    position: relative;
+    padding: 20px 0;
+    padding-left: 40px;
+    border-left: 2px solid #e9ecef;
+    margin-left: 20px;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -11px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #007bff;
+    top: 25px;
+}
+
+.timeline-content {
+    background: #fff;
+    border-radius: 4px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.timeline-title {
+    color: #495057;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.timeline-item:hover {
+    transform: translateX(5px);
+    transition: transform 0.2s ease;
+}
+.hover-shadow:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+</style>
+{% endblock %}
+

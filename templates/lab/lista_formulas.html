@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid px-4 py-5">
+    <h2 class="display-4 mb-3 mb-sm-4 fs-2 fs-sm-1">Gestió de Fórmules Magistrals</h2>
+    <div class="bg-white p-4 rounded shadow-lg">
+        <div class="row g-4 mb-5">
+            <div class="col-12">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                    <a href="{{ url_for('solicitar_formula') }}" class="btn btn-primary px-4 py-2 rounded-pill hover-shadow">
+                        <i class="fas fa-plus-circle me-2"></i>Nova Fórmula
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="table-responsive rounded shadow-sm">
+                    <table class="table table-hover mb-0 border-light">
+                        <thead class="table-light">
+                            <tr>
+                                <th class="py-3 text-secondary">ID Petició</th>
+                                <th class="py-3 text-secondary">Nom</th>
+                                <th class="py-3 text-secondary">Data</th>
+                                <th class="py-3 text-secondary">Estat</th>
+                                <th class="py-3 text-secondary">Telèfon</th>
+                                <th class="py-3 text-secondary">RELE</th>
+                                <th class="py-3 text-secondary">Accions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for formula in formulas %}
+                            <tr class="align-middle">
+                                <td class="py-3 fw-medium">{{ formula.petition_id }}</td>
+                                <td class="py-3">{{ formula.nombre }}</td>
+                                <td class="py-3">{{ formula.fecha_solicitud.strftime('%d/%m/%Y %H:%M') }}</td>
+                                <td class="py-3">
+                                    <span class="badge bg-{{ 'success' if formula.estado == 'Completado' else 'warning' }} px-3 py-2 rounded-pill">
+                                        {{ formula.estado }}
+                                    </span>
+                                </td>
+                                <td class="py-3">{{ formula.telefono_contacto }}</td>
+                                <td class="py-3">{{ formula.requiere_rele }}</td>
+                                <td class="py-3">
+                                    <a href="{{ url_for('ver_formula', petition_id=formula.petition_id) }}" class="btn btn-sm btn-info px-3 rounded-pill text-white hover-shadow">
+                                        <i class="fas fa-eye me-1"></i>Veure Detalls
+                                    </a>
+                                </td>
+                            </tr>
+                            {% else %}
+                            <tr>
+                                <td colspan="7" class="text-center py-4 text-muted fst-italic">No hi ha fórmules registrades</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+<!--
+Renders a template for changing the state of a product.
+
+This template extends the base.html template and provides a form for changing the state of a product. The form includes the current product name and state, as well as a dropdown to select the new state. When the form is submitted, the new state is updated for the product.
+-->
+
+{% extends "base.html" %}
+
+{% block title %}Cambiar Estado{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-exchange-alt me-2"></i>Cambiar Estado de Producto
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        {{ form.hidden_tag() }}
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Producto</label>
+                            <input type="text" class="form-control" value="{{ producto.nombre }}" readonly>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Estado Actual</label>
+                            <input type="text" class="form-control" value="{{ producto.estado.nombre }}" readonly>
+                        </div>
+                        
+                        <div class="mb-3">
+                            {{ form.estado_nuevo.label(class="form-label") }}
+                            {{ form.estado_nuevo(class="form-select") }}
+                        </div>
+
+                        <div class="d-grid">
+                            {{ form.submit(class="btn btn-primary") }}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4 mt-sm-5">
+    <h2 class="display-4 mb-3 mb-sm-4 fs-2 fs-sm-1">Sol·licita fórmula Magistral</h2>
+    <div class="card shadow-sm bg-white">
+        <div class="card-body p-4">
+            <form method="POST" enctype="multipart/form-data" class="mt-3 mt-sm-4">
+                {{ form.csrf_token }}
+                
+                <div class="row mb-3 mb-sm-4">
+                    <div class="col-12">
+                        <div class="form-group">
+                            {{ form.petition_id.label(class="form-label") }}
+                            {{ form.petition_id(class="form-control") }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3 mb-sm-4">
+                    <div class="col-12">
+                        <div class="form-group">
+                            {{ form.nombre.label(class="form-label") }}
+                            {{ form.nombre(class="form-control") }}
+                            {% if form.nombre.errors %}
+                                <div class="alert alert-danger">
+                                    {% for error in form.nombre.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3 mb-sm-4">
+                    <div class="col-12">
+                        <div class="form-group">
+                            {{ form.descripcion.label(class="form-label") }}
+                            {{ form.descripcion(class="form-control", rows=4) }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3 mb-sm-4">
+                    <div class="col-12 col-md-6 mb-3 mb-md-0">
+                        <div class="form-group">
+                            {{ form.requiere_rele.label(class="form-label") }}
+                            {{ form.requiere_rele(class="form-control") }}
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-group">
+                            {{ form.telefono_contacto.label(class="form-label") }}
+                            {{ form.telefono_contacto(class="form-control") }}
+                            {% if form.telefono_contacto.errors %}
+                                <div class="alert alert-danger">
+                                    {% for error in form.telefono_contacto.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3 mb-sm-4">
+                    <div class="col-12">
+                        <div class="form-group">
+                            {{ form.foto_receta.label(class="form-label") }}
+                            {{ form.foto_receta(class="form-control") }}
+                            {% if form.foto_receta.errors %}
+                                <div class="alert alert-danger">
+                                    {% for error in form.foto_receta.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-4 mt-sm-5">
+                    <div class="col-12 text-center">
+                        {{ form.submit(class="btn btn-primary btn-lg w-100 w-sm-auto px-5") }}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
